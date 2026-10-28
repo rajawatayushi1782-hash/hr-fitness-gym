@@ -1,0 +1,669 @@
+{
+  "algemene-voorwaarden.html": {
+    "title": "Algemene voorwaarden | GO180",
+    "h1s": [
+      "Algemene voorwaarden"
+    ],
+    "h2s": [
+      ""
+    ],
+    "hasTel": false,
+    "hasMailto": true,
+    "go180Matches": 43,
+    "leeuwardenMatches": 4
+  },
+  "club-leeuwarden.html": {
+    "title": "Personal training Leeuwarden? [Build Your Tomorrow] | GO180",
+    "h1s": [
+      "Leeuwarden"
+    ],
+    "h2s": [
+      "Dé plek voor personal training in Leeuwarden",
+      "Personal training voor het behalen van je doelen",
+      "Personal training voor het behalen van je doelen",
+      "Personal training bij GO180 in Leeuwarden",
+      "Veelgestelde vragen over personal training in Leeuwarden",
+      "Veelgestelde vragen over personal training in Leeuwarden",
+      "Personal trainers in Leeuwarden",
+      "Leeuwarden"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 65,
+    "leeuwardenMatches": 48
+  },
+  "coach-annick-douma.html": {
+    "title": "Annick Douma | GO180",
+    "h1s": [
+      "Annick Douma"
+    ],
+    "h2s": [
+      "Mijn achtergrond",
+      "Appie Kooistra"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 34,
+    "leeuwardenMatches": 2
+  },
+  "coach-appie-kooistra.html": {
+    "title": "Appie Kooistra | GO180",
+    "h1s": [
+      "Appie Kooistra"
+    ],
+    "h2s": [
+      "Mijn achtergrond",
+      "Mijn achtergrond",
+      "Mijn aanpak",
+      "Mijn aanpak",
+      "Thomas Kramer"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 34,
+    "leeuwardenMatches": 2
+  },
+  "coach-arjon-van-der-wal.html": {
+    "title": "Arjon van der Wal | GO180",
+    "h1s": [
+      "Arjon van der Wal"
+    ],
+    "h2s": [
+      "Specialisme",
+      "Hielke van der Lei"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 38,
+    "leeuwardenMatches": 2
+  },
+  "coach-hielke-feenstra.html": {
+    "title": "Hielke Feenstra | GO180",
+    "h1s": [
+      "Hielke Feenstra"
+    ],
+    "h2s": [
+      "Specialisme",
+      "Arjon van der Wal"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 34,
+    "leeuwardenMatches": 2
+  },
+  "coach-hielke-van-der-lei.html": {
+    "title": "Onze coaches staan voor je klaar | Hielke van der Lei | GO180",
+    "h1s": [
+      "Hielke van der Lei"
+    ],
+    "h2s": [
+      "Specialisme",
+      "Mijn achtergrond",
+      "Annick Douma"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 42,
+    "leeuwardenMatches": 2
+  },
+  "coach-thomas-kramer.html": {
+    "title": "Thomas Kramer | GO180",
+    "h1s": [
+      "Thomas Kramer"
+    ],
+    "h2s": [
+      "Specialisme",
+      "Achtergrond &amp; aanpak",
+      "Achtergrond &amp; aanpak",
+      "Hielke Feenstra"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 31,
+    "leeuwardenMatches": 2
+  },
+  "coaches.html": {
+    "title": "Coaches | GO180",
+    "h1s": [
+      "Coaches"
+    ],
+    "h2s": [
+      "Club"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 48,
+    "leeuwardenMatches": 3
+  },
+  "contact.html": {
+    "title": "Meer weten? Neem contact met ons op | GO180",
+    "h1s": [
+      "Contact"
+    ],
+    "h2s": [],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 33,
+    "leeuwardenMatches": 2
+  },
+  "disclaimer.html": {
+    "title": "Disclaimer | GO180",
+    "h1s": [
+      "Disclaimer"
+    ],
+    "h2s": [
+      ""
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 47,
+    "leeuwardenMatches": 2
+  },
+  "free-trial.html": {
+    "title": "Gratis proefles aanvragen | GO180",
+    "h1s": [
+      "Gratis proefles aanvragen"
+    ],
+    "h2s": [
+      "Over GO180",
+      "Programs"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 42,
+    "leeuwardenMatches": 5
+  },
+  "home.html": {
+    "title": "Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180",
+    "h1s": [
+      "Build your tomorrow",
+      "Programs",
+      "Coaches",
+      "Onze club",
+      "Stories",
+      "GO180?"
+    ],
+    "h2s": [],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 70,
+    "leeuwardenMatches": 11
+  },
+  "join-now.html": {
+    "title": "Join now | GO180",
+    "h1s": [
+      "Join now"
+    ],
+    "h2s": [
+      "Meer informatie"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 37,
+    "leeuwardenMatches": 4
+  },
+  "pricing.html": {
+    "title": "Personal training kosten? [Programma's &amp; Maatwerk] | GO180",
+    "h1s": [
+      "Pricing"
+    ],
+    "h2s": [
+      "Kosten voor GO2Gether",
+      "Kosten voor GO2day",
+      "Kosten voor HYROX",
+      "Kosten voor personal training",
+      "Het adaptable programma",
+      "Digital coaching",
+      "Kosten voor personal training bij GO180",
+      "Vraag een gratis proefles aan"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 35,
+    "leeuwardenMatches": 4
+  },
+  "privacy-policy.html": {
+    "title": "Privacy Policy | GO180",
+    "h1s": [
+      "Privacy Policy"
+    ],
+    "h2s": [
+      ""
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 36,
+    "leeuwardenMatches": 3
+  },
+  "programs-adaptable.html": {
+    "title": "Adaptable; voor vitale en veerkrachtige werknemers | GO180",
+    "h1s": [
+      "Adaptable"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "Duurzame inzetbaarheid",
+      "Onze werkwijze",
+      "Persoonlijk assessment",
+      "Personal training in een kleine groep",
+      "Voedingsadvies en begeleiding",
+      "Het Fundamentals handboek en werkboek",
+      "Wekelijkse monitoring en groepscoaching",
+      "Maandelijkse themasessies en groepscoaching",
+      "Coaches",
+      "Digital coaching"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 101,
+    "leeuwardenMatches": 5
+  },
+  "programs-digital-coaching.html": {
+    "title": "Digital Coaching; op afstand werken aan jouw fitheid | GO180",
+    "h1s": [
+      "Digital coaching"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "De juiste balans",
+      "Onze werkwijze",
+      "Persoonlijke assessment",
+      "Een persoonlijk trainingsplan, geschikt voor jouw locatie",
+      "Voedingsadvies",
+      "Online besloten community",
+      "Coaches",
+      ""
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 64,
+    "leeuwardenMatches": 3
+  },
+  "programs-essentials.html": {
+    "title": "Essentials programma [word in 12 weken gezond] | GO180",
+    "h1s": [
+      "Essentials"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "In de praktijk",
+      "Onze werkwijze",
+      "Persoonlijk assessment",
+      "Doelgerichte persoonlijke training",
+      "Voedingsadvies",
+      "Wekelijkse evaluatie",
+      "Coaches",
+      "Fundamentals"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 61,
+    "leeuwardenMatches": 3
+  },
+  "programs-fundamentals.html": {
+    "title": "Fundamentals; werk o.a. aan je eet &amp; beweeggewoontes | GO180",
+    "h1s": [
+      "Fundamentals"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "In de praktijk",
+      "Onze werkwijze",
+      "Intensieve begeleiding voor 24 weken",
+      "Persoonlijk assessment",
+      "Het Fundamentals handboek en werkboek",
+      "Doelgerichte personal training",
+      "Voedingsadvies en begeleiding",
+      "Wekelijkse coaching en evaluatiegesprekken",
+      "Coaches",
+      "GO2Gether"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 75,
+    "leeuwardenMatches": 2
+  },
+  "programs-go2day.html": {
+    "title": "GO2day; flexibel fitnessen en persoonlijke aandacht | GO180",
+    "h1s": [
+      "GO2day"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "Samen zelfstandig trainen",
+      "Onze werkwijze",
+      "Persoonlijke assessment",
+      "Online trainingsschema’s, progressie template en evaluatie",
+      "Onderdeel zijn van onze club",
+      "Healthy Ageing"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 44,
+    "leeuwardenMatches": 2
+  },
+  "programs-go2gether.html": {
+    "title": "Met GO2gether train je in groepsverband | GO180",
+    "h1s": [
+      "GO2Gether"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "In het kort",
+      "Onze werkwijze",
+      "Persoonlijke assessment",
+      "Personal training in een kleine groep",
+      "Voedingsadvies",
+      "Wekelijkse monitoring",
+      "Maandelijkse themasessies en groepscoaching",
+      "Coaches",
+      "Adaptable"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 80,
+    "leeuwardenMatches": 4
+  },
+  "programs-healthy-ageing.html": {
+    "title": "Healthy Ageing; gezond en vitaal ouder worden | GO180",
+    "h1s": [
+      "Healthy Ageing"
+    ],
+    "h2s": [
+      "Bij dit programma inbegrepen:",
+      "In de praktijk",
+      "Onze werkwijze",
+      "Persoonlijke assessment",
+      "Personal training in een kleine groep",
+      "Themasessies en clubgevoel",
+      "Essentials"
+    ],
+    "hasTel": true,
+    "hasMailto": true,
+    "go180Matches": 41,
+    "leeuwardenMatches": 2
+  },
+  "programs-hyrox.html": {
+    "title": "HYROX training Leeuwarden? Unieke trainingservaring | GO180",
+    "h1s": [
+      "HYROX"
+    ],
+    "h2s": [
+      "Wat kun je verwachten bij een HYROX training?",
+      "Voor wie is HYROX?",
+      "Bij dit programma inbegrepen:",
+      "Onze werkwijze",
+      "Techniek &amp; warming-up",
+      "HYROX Workout of the Day (WOD)",
+      "Progressieve opbouw",
+      "Community &amp; motivatie",
+      "Veelgestelde vragen over HYROX in Leeuwarden",
+      "Veelgestelde vragen over HYROX in Leeuwarden",
+      "GO2day"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 46,
+    "leeuwardenMatches": 21
+  },
+  "programs.html": {
+    "title": "Programma's | GO180",
+    "h1s": [
+      "Programs"
+    ],
+    "h2s": [
+      "HYROX",
+      "GO2day",
+      "Healthy Ageing",
+      "Essentials",
+      "Fundamentals",
+      "GO2Gether",
+      "Adaptable",
+      "Digital coaching",
+      "Coaches"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 40,
+    "leeuwardenMatches": 4
+  },
+  "stories.html": {
+    "title": "Stories | GO180",
+    "h1s": [
+      "Stories"
+    ],
+    "h2s": [
+      "Page"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 40,
+    "leeuwardenMatches": 8
+  },
+  "story-beste-glute-oefeningen.html": {
+    "title": "Beste glute oefeningen voor stevige, sterke bilspieren | GO180",
+    "h1s": [
+      "Wat zijn de beste glute oefeningen voor stevige, sterke bilspieren?"
+    ],
+    "h2s": [
+      "Waardoor jij niet het gewenste resultaat boekt",
+      "Welke oefeningen activeren de bilspieren het best?",
+      "Welke oefeningen pas je het best samen in een schema?",
+      "Hoe weet je of je bilspieren goed aanspannen?",
+      "Heeft techniek meer impact dan gewicht?",
+      "Hoe zet je de stap naar gerichte glute training?",
+      "Hoe begin je weer met sporten na een lange pauze?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 36,
+    "leeuwardenMatches": 2
+  },
+  "story-hoe-begin-je-weer-met-sporten-na-een-lange-pauze.html": {
+    "title": "Hoe begin je weer met sporten na een lange pauze? | GO180",
+    "h1s": [
+      "Hoe begin je weer met sporten na een lange pauze?"
+    ],
+    "h2s": [
+      "Wat verandert er in je lichaam na een lange pauze?",
+      "Waarom gaan de meeste mensen te snel van start?",
+      "Hoe bouw je een terugkeerschema op?",
+      "Wat zegt je lichaam je dat je moet luisteren?",
+      "Welke sport of trainingsvorm kies je bij een terugkeer?",
+      "Wat helpt om consistent te blijven?",
+      "Hoe zorg je voor de juiste start?",
+      "Teambuilding in Leeuwarden? Ontdek de kracht van samen sporten bij GO180"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 39,
+    "leeuwardenMatches": 6
+  },
+  "story-hoe-blijf-je-gezond-met-een-drukke-baan.html": {
+    "title": "Hoe blijf je gezond met een drukke baan? | GO180",
+    "h1s": [
+      "Hoe blijf je gezond met een drukke baan?"
+    ],
+    "h2s": [
+      "Waarom een drukke baan vaak ten koste gaat van je gezondheid",
+      "Waarom een drukke baan vaak ten koste gaat van je gezondheid",
+      "Gezond leven hoeft niet perfect te zijn",
+      "5 praktische tips om gezond te blijven met een drukke baan",
+      "Gezond leven geeft juist méér energie voor je werk",
+      "Begin klein, maar begin wel",
+      "In shape voor de zomer: de complete gids"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 39,
+    "leeuwardenMatches": 2
+  },
+  "story-ik-durf-niet-naar-de-sportschool-hoe-kom-je-over-die-drempel-heen.html": {
+    "title": "Ik durf niet naar de sportschool: hoe kom je over die drempel heen? | GO180",
+    "h1s": [
+      "Ik durf niet naar de sportschool: hoe kom je over die drempel heen?"
+    ],
+    "h2s": [
+      "Wat er eigenlijk achter die drempel zit",
+      "Waarom helpt “gewoon gaan” niet als advies",
+      "Wat helpt wél?",
+      "Wat als de angst dieper gaat?",
+      "Hoe maak je de eerste stap concreet?",
+      "Bij GO180 hoef je er niet alleen in te staan",
+      "Waarom stop ik steeds met sporten?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 38,
+    "leeuwardenMatches": 2
+  },
+  "story-is-krachttraining-voor-kinderen-slecht-voor-de-groei.html": {
+    "title": "Is krachttraining voor kinderen slecht voor de groei? | GO180",
+    "h1s": [
+      "Is krachttraining voor kinderen slecht voor de groei?"
+    ],
+    "h2s": [
+      "Waar komt het idee vandaan dat krachttraining de groei remt?",
+      "Waar komt het idee vandaan dat krachttraining de groei remt?",
+      "Wat zijn groeischijven en lopen die gevaar?",
+      "Wat zegt onderzoek over kinderen die aan kracht werken?",
+      "Welke voordelen heeft krachttraining voor jongeren?",
+      "Vanaf welke leeftijd kan een kind met krachttraining beginnen?",
+      "Waar zitten de echte risico’s?",
+      "Hoe ziet verantwoorde training voor tieners eruit?",
+      "Twijfel je of krachttraining bij je kind past?",
+      "Sportschool intake: waarom starten met een plan meer oplevert dan zomaar beginnen"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 36,
+    "leeuwardenMatches": 3
+  },
+  "story-sportschool-intake.html": {
+    "title": "Sportschool intake: starten met een plan | GO180",
+    "h1s": [
+      "Sportschool intake: waarom starten met een plan meer oplevert dan zomaar beginnen"
+    ],
+    "h2s": [
+      "Wat veel sporters doen als ze beginnen",
+      "Wat veel sporters doen als ze beginnen",
+      "Wat houdt een sportschool intake precies in?",
+      "Waarom is de motivatie achter je doel zo belangrijk?",
+      "Welke vragen komen aan bod tijdens een intake?",
+      "Wat zegt je basis over het type training dat bij je past?",
+      "Wat levert een plan op ten opzichte van freestyle trainen?",
+      "Hoe voorkom je dat je na zes weken stopt?",
+      "Hoe ziet de intake bij GO180 eruit?",
+      "Waar begin je?",
+      "Ik durf niet naar de sportschool: hoe kom je over die drempel heen?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 43,
+    "leeuwardenMatches": 2
+  },
+  "story-teambuilding-in-leeuwarden-ontdek-de-kracht-van-samen-sporten-bij-go180.html": {
+    "title": "Teambuilding in Leeuwarden | GO180",
+    "h1s": [
+      "Teambuilding in Leeuwarden? Ontdek de kracht van samen sporten bij GO180"
+    ],
+    "h2s": [
+      "Waarom sport zo krachtig werkt voor teambuilding",
+      "Waarom sport zo krachtig werkt voor teambuilding",
+      "Geen standaard bedrijfsuitje",
+      "Voor welke bedrijven is dit geschikt?",
+      "Meer dan alleen sporten",
+      "Waarom bedrijven kiezen voor GO180",
+      "Teambuilding in Leeuwarden die impact maakt",
+      "Hoe blijf je gezond met een drukke baan?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 61,
+    "leeuwardenMatches": 27
+  },
+  "story-waarom-doet-een-dieetcoach-meer-dan-een-voedingsschema-maken.html": {
+    "title": "Waarom doet een dieetcoach meer dan een voedingsschema maken? | GO180",
+    "h1s": [
+      "Waarom doet een dieetcoach meer dan een voedingsschema maken?"
+    ],
+    "h2s": [
+      "Wat gaat er mis met alleen een voedingsschema?",
+      "Wat gaat er mis met alleen een voedingsschema?",
+      "Wat doet een dieetcoach dan wel?",
+      "Is een dieetcoach hetzelfde als een diëtist?",
+      "Hoe kies je een coach die bij je past?",
+      "Hoe benadert GO180 voeding?",
+      "Wat levert de juiste begeleiding je op?",
+      "Is krachttraining voor kinderen slecht voor de groei?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 39,
+    "leeuwardenMatches": 5
+  },
+  "story-waarom-stop-ik-steeds-met-sporten.html": {
+    "title": "Waarom stop ik steeds met sporten? | GO180",
+    "h1s": [
+      "Waarom stop ik steeds met sporten?"
+    ],
+    "h2s": [
+      "Waarom het geen kwestie is van wilskracht",
+      "Waarom het geen kwestie is van wilskracht",
+      "Wat zijn de meest voorkomende redenen om te stoppen?",
+      "Hoe bouw je een gewoonte die wél blijft?",
+      "Wat als je toch een week overslaat?",
+      "Hoe doorbreek je het patroon structureel?",
+      "Zet de stap die je steeds uitstelt",
+      "Wat zijn de beste glute oefeningen voor stevige, sterke bilspieren?"
+    ],
+    "hasTel": true,
+    "hasMailto": false,
+    "go180Matches": 36,
+    "leeuwardenMatches": 2
+  },
+  "story-wat-zijn-de-kenmerken-van-een-gezonde-leefstijl.html": {
+    "title": "Wat zijn de kenmerken van een gezonde leefstijl? | GO180",
+    "h1s": [
+      "Wat zijn de kenmerken van een gezonde leefstijl?"
+    ],
+    "h2s": [
+      "Waarom gaat gezond leven niet over perfectie?",
+      "Waarom gaat gezond leven niet over perfectie?",
+      "Welke pijlers bepalen hoe gezond je leeft?",
+      "Hoe herken je een gezonde leefstijl in het dagelijks leven?",
+      "Waarom lukt gezonder leven vaak niet?",
+      "Waar begin je als je gezonder wilt leven?",
+      "Hoe helpt begeleiding bij een blijvende verandering?",
+      "Wil je weten hoe jouw leefstijl ervoor staat?",
+      "Waarom doet een dieetcoach meer dan een voedingsschema maken?"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 39,
+    "leeuwardenMatches": 3
+  },
+  "we-are-go180.html": {
+    "title": "We are GO180 - Bouwen aan jouw toekomst",
+    "h1s": [
+      "We are GO180"
+    ],
+    "h2s": [
+      "Onze missie en visie",
+      "GO180 filosofie",
+      "Mindset",
+      "Voeding",
+      "Personal Training",
+      "Herstel",
+      "Veelgestelde vragen over GO180",
+      "Veelgestelde vragen over GO180",
+      "Coaches",
+      "Club",
+      "Programs"
+    ],
+    "hasTel": false,
+    "hasMailto": false,
+    "go180Matches": 72,
+    "leeuwardenMatches": 29
+  }
+}

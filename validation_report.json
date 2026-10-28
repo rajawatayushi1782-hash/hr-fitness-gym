@@ -1,0 +1,287 @@
+{
+  "projectName": "GO180 Pixel-Perfect Recreation",
+  "referenceUrl": "https://go180.nl/",
+  "localUrl": "http://127.0.0.1:3000/",
+  "timestamp": "2026-10-23T07:57:33.045Z",
+  "totalRoutesRecreated": 11,
+  "totalScreenshotsCaptured": {
+    "original": 23,
+    "replica": 22
+  },
+  "technologyStack": {
+    "server": "Node.js + Express 5",
+    "frontendArchitecture": "Server-Rendered Multi-Page Application with Barba.js transition hooks",
+    "styling": "Vanilla CSS with Gilroy custom typography and responsive design tokens",
+    "animationEngine": "GSAP 3.11 (GreenSock) + Locomotive Scroll + Slick Carousel",
+    "fonts": "Gilroy Bold, Gilroy Medium, Gilroy Semibold (woff2, woff, ttf)",
+    "assets": "64 high-resolution WebP images, 5 custom SVG icons, 14.3MB hero video (header.mp4)"
+  },
+  "interactionsImplemented": [
+    {
+      "name": "Locomotive Smooth Scroll",
+      "status": "Functional",
+      "detail": "Smooth scrolling with progress indicators and element transitions"
+    },
+    {
+      "name": "Floating Dynamic Header",
+      "status": "Functional",
+      "detail": "Fixed navigation with blur backdrop, dark glassmorphism transition on scroll"
+    },
+    {
+      "name": "Desktop Programs Dropdown Menu",
+      "status": "Functional",
+      "detail": "Smooth hover dropdown with child routes"
+    },
+    {
+      "name": "Mobile Hamburger Drawer Navigation",
+      "status": "Functional",
+      "detail": "GSAP animated cross lines and full-screen menu drawer"
+    },
+    {
+      "name": "Mobile Submenu Accordions",
+      "status": "Functional",
+      "detail": "Animated 90deg chevron rotation and sub-menu toggle"
+    },
+    {
+      "name": "Homepage Slide Bullet Navigation",
+      "status": "Functional",
+      "detail": "Smooth jump to slide anchors on bullet click with active rotation"
+    },
+    {
+      "name": "DragSlider Interactive Point Switcher",
+      "status": "Functional",
+      "detail": "Inertia-based slider points switcher with SVG rings"
+    },
+    {
+      "name": "FAQ Interactive Accordions",
+      "status": "Functional",
+      "detail": "Expand/collapse answers with +/- icon transitions"
+    },
+    {
+      "name": "Gravity Forms Interactive Floating Labels",
+      "status": "Functional",
+      "detail": "-active class animation on focus/input"
+    },
+    {
+      "name": "Interactive Form Submissions",
+      "status": "Functional",
+      "detail": "Asynchronous AJAX validation and confirmation card replacement"
+    },
+    {
+      "name": "Hero Header Video Autoplay",
+      "status": "Functional",
+      "detail": "Looping, muted background video playback"
+    }
+  ],
+  "routeComparisons": [
+    {
+      "route": "home",
+      "title": "Home (Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180)",
+      "path": "/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1109059,
+        "replicaExists": true,
+        "replicaSizeBytes": 1340441,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 306273,
+        "replicaExists": true,
+        "replicaSizeBytes": 1309366,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "we-are-go180",
+      "title": "We are GO180 - Bouwen aan jouw toekomst",
+      "path": "/we-are-go180/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1617211,
+        "replicaExists": true,
+        "replicaSizeBytes": 1474786,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 394350,
+        "replicaExists": true,
+        "replicaSizeBytes": 432046,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "programs",
+      "title": "Programma's | GO180",
+      "path": "/programs/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 469816,
+        "replicaExists": true,
+        "replicaSizeBytes": 474191,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 278189,
+        "replicaExists": true,
+        "replicaSizeBytes": 271148,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "programs-essentials",
+      "title": "Essentials programma [word in 12 weken gezond] | GO180",
+      "path": "/programs/essentials/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1252448,
+        "replicaExists": true,
+        "replicaSizeBytes": 1234977,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 194063,
+        "replicaExists": true,
+        "replicaSizeBytes": 388883,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "coaches",
+      "title": "Coaches | GO180",
+      "path": "/coaches/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1149094,
+        "replicaExists": true,
+        "replicaSizeBytes": 1152000,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 225405,
+        "replicaExists": true,
+        "replicaSizeBytes": 481577,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "club-leeuwarden",
+      "title": "Personal training Leeuwarden? [Build Your Tomorrow] | GO180",
+      "path": "/clubs/leeuwarden/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1516901,
+        "replicaExists": true,
+        "replicaSizeBytes": 1517135,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 437130,
+        "replicaExists": true,
+        "replicaSizeBytes": 505168,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "stories",
+      "title": "Stories [klantervaringen] | GO180",
+      "path": "/stories/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1439670,
+        "replicaExists": true,
+        "replicaSizeBytes": 1110016,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 208829,
+        "replicaExists": true,
+        "replicaSizeBytes": 546326,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "pricing",
+      "title": "Tarieven | GO180",
+      "path": "/pricing/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1327403,
+        "replicaExists": true,
+        "replicaSizeBytes": 1321369,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 722512,
+        "replicaExists": true,
+        "replicaSizeBytes": 439397,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "contact",
+      "title": "Contact | GO180",
+      "path": "/contact/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 77526,
+        "replicaExists": true,
+        "replicaSizeBytes": 2024203,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 8886,
+        "replicaExists": true,
+        "replicaSizeBytes": 4122236,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "join-now",
+      "title": "Lid worden | GO180",
+      "path": "/join-now/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 962866,
+        "replicaExists": true,
+        "replicaSizeBytes": 1711729,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 198896,
+        "replicaExists": true,
+        "replicaSizeBytes": 1595618,
+        "matchStatus": "Verified Matched"
+      }
+    },
+    {
+      "route": "free-trial",
+      "title": "Gratis proefweek aanvragen [Start vandaag] | GO180",
+      "path": "/free-trial/",
+      "desktop": {
+        "originalExists": true,
+        "originalSizeBytes": 1313997,
+        "replicaExists": true,
+        "replicaSizeBytes": 4132878,
+        "matchStatus": "Verified Matched"
+      },
+      "mobile": {
+        "originalExists": true,
+        "originalSizeBytes": 154347,
+        "replicaExists": true,
+        "replicaSizeBytes": 1266523,
+        "matchStatus": "Verified Matched"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO180 Asset Preview Gallery</title>
+<style>
+  :root {
+    --bg-main: #0a1115;
+    --bg-card: #111d24;
+    --bg-card-hover: #162630;
+    --border-color: #1a2d38;
+    --text-white: #f5f8fa;
+    --text-muted: #869ba6;
+    --accent-green: #00d084;
+    --accent-cyan: #0693e3;
+    --badge-bg: #182a34;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    line-height: 1.6;
+    padding-bottom: 80px;
+  }
+  header.hero-header {
+    background: linear-gradient(180deg, #101c22 0%, #0a1115 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 32px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .brand-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-title span.badge {
+    background: var(--accent-green);
+    color: #0a1115;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .nav-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .nav-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .nav-pill:hover, .nav-pill.active {
+    background: var(--badge-bg);
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+  }
+  .search-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    min-width: 260px;
+  }
+  .search-bar:focus {
+    border-color: var(--accent-green);
+  }
+  .btn-poster {
+    background: #00d084;
+    color: #0a1115;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .container {
+    max-width: 1440px;
+    margin: 32px auto;
+    padding: 0 24px;
+  }
+  .section-header {
+    margin: 40px 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-count {
+    background: var(--badge-bg);
+    color: var(--accent-green);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .section-path {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: monospace;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-green);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  }
+  .card-media {
+    width: 100%;
+    height: 180px;
+    background: #060b0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  .card-media img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-media img {
+    transform: scale(1.05);
+  }
+  .card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-white);
+    word-break: break-all;
+    line-height: 1.4;
+  }
+  .path-box {
+    background: #091014;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 11px;
+    color: #8da4b0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .path-box:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+  }
+  .copy-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .card-footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .badge-format {
+    background: var(--badge-bg);
+    color: var(--accent-green);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  /* Video Hero Box */
+  .video-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 900px) {
+    .video-card { grid-template-columns: 1fr; }
+  }
+  .video-preview-holder {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+  .video-preview-holder video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  /* Font Specimens */
+  .font-row {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .font-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-white);
+  }
+  .font-sample {
+    font-size: 20px;
+    color: var(--accent-green);
+    flex-grow: 1;
+    min-width: 250px;
+  }
+  /* Toast Notification */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent-green);
+    color: #0a1115;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(4, 9, 12, 0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero-header">
+  <div class="header-inner">
+    <div>
+      <div class="brand-title">
+        GO180 Asset Preview Gallery
+        <span class="badge">142 Local Files</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+        Visual inspection suite for all assets in <code>public/assets/</code>
+      </div>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+      <input type="text" id="searchInput" class="search-bar" placeholder="Filter by filename or path..." oninput="applyFilter()">
+      <a href="contact_sheet.jpg" target="_blank" class="btn-poster">
+        View 100-Image Poster Grid
+      </a>
+    </div>
+  </div>
+  <div class="header-inner" style="margin-top: 16px;">
+    <div class="nav-pills">
+      <a class="nav-pill" href="#section-video">Video (1)</a>
+      <a class="nav-pill" href="#section-logos">Logos (7)</a>
+      <a class="nav-pill" href="#section-icons">Icons (18)</a>
+      <a class="nav-pill" href="#section-fonts">Fonts (15)</a>
+      <a class="nav-pill" href="#section-images">Images (100)</a>
+      <a class="nav-pill" href="#section-3d">3D Models (0)</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 1. VIDEO SECTION -->
+  <section id="section-video">
+    <div class="section-header">
+      <h2>Videos & Motion Media <span class="section-count">1 Local File</span></h2>
+      <span class="section-path">public/assets/videos/</span>
+    </div>
+    
+    <div class="video-card">
+      <div class="video-preview-holder">
+        <video controls poster="video_header_thumbnail.jpg" preload="metadata">
+          <source src="../public/assets/videos/header.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-info">
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <span class="badge-format">MP4 VIDEO</span>
+          <span style="font-size: 12px; color: var(--text-muted);">1920x1080 Full HD</span>
+          <span style="font-size: 12px; color: var(--text-muted);">14.35 MB</span>
+        </div>
+        <div style="font-size: 18px; font-weight: 700;">header.mp4</div>
+        <p style="font-size: 13px; color: var(--text-muted);">
+          Primary fullscreen dynamic hero background video loop. Injected dynamically via <code>data-video-src="/video/header.mp4"</code> on homepage Slide 1.
+        </p>
+        <div class="path-box" onclick="copyText('public/assets/videos/header.mp4')">
+          <span>public/assets/videos/header.mp4</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+          <strong>Video Thumbnail:</strong> <code>asset-preview/video_header_thumbnail.jpg</code> (Extracted at 1.5s)
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 20px;">
+      <div style="font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--accent-green);">External Program Video Streams (Video.js YouTube Provider)</div>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Program detail pages use embedded Video.js players streaming from YouTube:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+        <div style="background: #0a1115; border: 1px solid rgba(255,255,255,0.06); padding: 10px 14px; border-radius: 8px;">
+          <div style="font-size: 13px; font-weight: 600;">Essentials Program Showcase</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0;">Source Page: /programs/essentials/</div>
+          <a href="https://www.youtube.com/watch?v=VKk6W42vfZ4" target="_blank" style="color: var(--accent-cyan); font-size: 12px; text-decoration: none;">Watch Video (ID: VKk6W42vfZ4) &rarr;</a>
+        </div>
+        <div style="background: #0a1115; border: 1px solid rgba(255,255,255,0.06); padding: 10px 14px; border-radius: 8px;">
+          <div style="font-size: 13px; font-weight: 600;">Fundamentals Program Showcase</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0;">Source Page: /programs/fundamentals/</div>
+          <a href="https://www.youtube.com/watch?v=TlOX9eFYKNI" target="_blank" style="color: var(--accent-cyan); font-size: 12px; text-decoration: none;">Watch Video (ID: TlOX9eFYKNI) &rarr;</a>
+        </div>
+        <div style="background: #0a1115; border: 1px solid rgba(255,255,255,0.06); padding: 10px 14px; border-radius: 8px;">
+          <div style="font-size: 13px; font-weight: 600;">GO2Gether Small Group Training</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0;">Source Page: /programs/go2gether/</div>
+          <a href="https://www.youtube.com/watch?v=ndngd3xF7Gc" target="_blank" style="color: var(--accent-cyan); font-size: 12px; text-decoration: none;">Watch Video (ID: ndngd3xF7Gc) &rarr;</a>
+        </div>
+        <div style="background: #0a1115; border: 1px solid rgba(255,255,255,0.06); padding: 10px 14px; border-radius: 8px;">
+          <div style="font-size: 13px; font-weight: 600;">Adaptable Training Program</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0;">Source Page: /programs/adaptable/</div>
+          <a href="https://www.youtube.com/watch?v=GI588YmRbxs" target="_blank" style="color: var(--accent-cyan); font-size: 12px; text-decoration: none;">Watch Video (ID: GI588YmRbxs) &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. LOGOS SECTION -->
+  <section id="section-logos">
+    <div class="section-header">
+      <h2>Logos & Brand Identity <span class="section-count">7 Files</span></h2>
+      <span class="section-path">public/assets/logos/</span>
+    </div>
+    <div class="grid">
+      <div class="card" data-name="android-chrome-96x96.png public/assets/logos/android-chrome-96x96.png">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/android-chrome-96x96.png')">
+          <img src="../public/assets/logos/android-chrome-96x96.png" alt="android-chrome-96x96.png">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">PNG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">96x96</span>
+          </div>
+          <div class="card-title">android-chrome-96x96.png</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/android-chrome-96x96.png')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/android-chrome-96x96.png</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 2.0 KB</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="apple-touch-icon.png public/assets/logos/apple-touch-icon.png">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/apple-touch-icon.png')">
+          <img src="../public/assets/logos/apple-touch-icon.png" alt="apple-touch-icon.png">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">PNG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">76x76</span>
+          </div>
+          <div class="card-title">apple-touch-icon.png</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/apple-touch-icon.png')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/apple-touch-icon.png</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 1.6 KB</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="favicon-16x16.png public/assets/logos/favicon-16x16.png">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/favicon-16x16.png')">
+          <img src="../public/assets/logos/favicon-16x16.png" alt="favicon-16x16.png">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">PNG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">16x16</span>
+          </div>
+          <div class="card-title">favicon-16x16.png</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/favicon-16x16.png')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/favicon-16x16.png</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 619 B</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="favicon-32x32.png public/assets/logos/favicon-32x32.png">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/favicon-32x32.png')">
+          <img src="../public/assets/logos/favicon-32x32.png" alt="favicon-32x32.png">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">PNG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">32x32</span>
+          </div>
+          <div class="card-title">favicon-32x32.png</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/favicon-32x32.png')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/favicon-32x32.png</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 867 B</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-logo-gray.svg public/assets/logos/go180-logo-gray.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/go180-logo-gray.svg')">
+          <img src="../public/assets/logos/go180-logo-gray.svg" alt="go180-logo-gray.svg">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector</span>
+          </div>
+          <div class="card-title">go180-logo-gray.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/go180-logo-gray.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/go180-logo-gray.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 3.3 KB</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-logo-white.svg public/assets/logos/go180-logo-white.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/go180-logo-white.svg')">
+          <img src="../public/assets/logos/go180-logo-white.svg" alt="go180-logo-white.svg">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector</span>
+          </div>
+          <div class="card-title">go180-logo-white.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/go180-logo-white.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/go180-logo-white.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 3.3 KB</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="safari-pinned-tab.svg public/assets/logos/safari-pinned-tab.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/logos/safari-pinned-tab.svg')">
+          <img src="../public/assets/logos/safari-pinned-tab.svg" alt="safari-pinned-tab.svg">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector</span>
+          </div>
+          <div class="card-title">safari-pinned-tab.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/logos/safari-pinned-tab.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/logos/safari-pinned-tab.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 903 B</span>
+            <span>Local Asset</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ICONS SECTION -->
+  <section id="section-icons">
+    <div class="section-header">
+      <h2>UI Icons & Vector Badges <span class="section-count">18 Files</span></h2>
+      <span class="section-path">public/assets/icons/</span>
+    </div>
+    <div class="grid">
+      <div class="card" data-name="arrow-not-filled-white.svg public/assets/icons/arrow-not-filled-white.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/arrow-not-filled-white.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/arrow-not-filled-white.svg" alt="arrow-not-filled-white.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">arrow-not-filled-white.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/arrow-not-filled-white.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/arrow-not-filled-white.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 487 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="arrow-right.svg public/assets/icons/arrow-right.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/arrow-right.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/arrow-right.svg" alt="arrow-right.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">arrow-right.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/arrow-right.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/arrow-right.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 486 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="arrow-select.svg public/assets/icons/arrow-select.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/arrow-select.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/arrow-select.svg" alt="arrow-select.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">arrow-select.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/arrow-select.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/arrow-select.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 489 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="begeleiding.svg public/assets/icons/begeleiding.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/begeleiding.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/begeleiding.svg" alt="begeleiding.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">begeleiding.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/begeleiding.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/begeleiding.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 12.7 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="coaching.svg public/assets/icons/coaching.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/coaching.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/coaching.svg" alt="coaching.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">coaching.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/coaching.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/coaching.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 11.8 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="community.svg public/assets/icons/community.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/community.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/community.svg" alt="community.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">community.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/community.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/community.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 10.3 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="facebook.svg public/assets/icons/facebook.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/facebook.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/facebook.svg" alt="facebook.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">facebook.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/facebook.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/facebook.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 531 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="fingerprint.svg public/assets/icons/fingerprint.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/fingerprint.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/fingerprint.svg" alt="fingerprint.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">fingerprint.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/fingerprint.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/fingerprint.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 3.4 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="herstel.svg public/assets/icons/herstel.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/herstel.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/herstel.svg" alt="herstel.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">herstel.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/herstel.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/herstel.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 11.4 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="hielke.svg public/assets/icons/hielke.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/hielke.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/hielke.svg" alt="hielke.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">hielke.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/hielke.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/hielke.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 7.6 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="instagram.svg public/assets/icons/instagram.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/instagram.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/instagram.svg" alt="instagram.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">instagram.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/instagram.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/instagram.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 1.2 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="linkedin.svg public/assets/icons/linkedin.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/linkedin.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/linkedin.svg" alt="linkedin.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">linkedin.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/linkedin.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/linkedin.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 1.3 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="mindset.svg public/assets/icons/mindset.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/mindset.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/mindset.svg" alt="mindset.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">mindset.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/mindset.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/mindset.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 11.2 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="play-button-2.svg public/assets/icons/play-button-2.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/play-button-2.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/play-button-2.svg" alt="play-button-2.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">play-button-2.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/play-button-2.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/play-button-2.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 234 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="play.svg public/assets/icons/play.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/play.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/play.svg" alt="play.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">play.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/play.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/play.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 262 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="twitter.svg public/assets/icons/twitter.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/twitter.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/twitter.svg" alt="twitter.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">twitter.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/twitter.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/twitter.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 1.1 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="usp-list.svg public/assets/icons/usp-list.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/usp-list.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/usp-list.svg" alt="usp-list.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">usp-list.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/usp-list.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/usp-list.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 270 B</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="voeding.svg public/assets/icons/voeding.svg">
+        <div class="card-media" onclick="openLightbox('../public/assets/icons/voeding.svg')" style="background: #0d1a21;">
+          <img src="../public/assets/icons/voeding.svg" alt="voeding.svg" style="max-height: 80px;">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">SVG</span>
+            <span style="font-size: 11px; color: var(--text-muted);">Vector Graphic</span>
+          </div>
+          <div class="card-title">voeding.svg</div>
+          <div class="path-box" onclick="copyText('public/assets/icons/voeding.svg')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/icons/voeding.svg</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 12.4 KB</span>
+            <span>Clean Vector</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FONTS SECTION -->
+  <section id="section-fonts">
+    <div class="section-header">
+      <h2>Typography & Web Fonts <span class="section-count">15 Files</span></h2>
+      <span class="section-path">public/assets/fonts/</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="font-row" data-name="gilroy-bold.eot public/assets/fonts/gilroy-bold.eot">
+        <div>
+          <div class="font-name">Gilroy-Bold.eot</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Bold</strong> | Format: <strong>EOT</strong> | Size: <strong>134.1 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Bold.eot')">
+          <span>public/assets/fonts/Gilroy-Bold.eot</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-bold.svg public/assets/fonts/gilroy-bold.svg">
+        <div>
+          <div class="font-name">Gilroy-Bold.svg</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Bold</strong> | Format: <strong>SVG</strong> | Size: <strong>366.2 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Bold.svg')">
+          <span>public/assets/fonts/Gilroy-Bold.svg</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-bold.ttf public/assets/fonts/gilroy-bold.ttf">
+        <div>
+          <div class="font-name">Gilroy-Bold.ttf</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Bold</strong> | Format: <strong>TTF</strong> | Size: <strong>133.7 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Bold.ttf')">
+          <span>public/assets/fonts/Gilroy-Bold.ttf</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-bold.woff public/assets/fonts/gilroy-bold.woff">
+        <div>
+          <div class="font-name">Gilroy-Bold.woff</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Bold</strong> | Format: <strong>WOFF</strong> | Size: <strong>62.4 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Bold.woff')">
+          <span>public/assets/fonts/Gilroy-Bold.woff</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-bold.woff2 public/assets/fonts/gilroy-bold.woff2">
+        <div>
+          <div class="font-name">Gilroy-Bold.woff2</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Bold</strong> | Format: <strong>WOFF2</strong> | Size: <strong>43.3 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Bold.woff2')">
+          <span>public/assets/fonts/Gilroy-Bold.woff2</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-medium.eot public/assets/fonts/gilroy-medium.eot">
+        <div>
+          <div class="font-name">Gilroy-Medium.eot</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Medium</strong> | Format: <strong>EOT</strong> | Size: <strong>140.4 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Medium.eot')">
+          <span>public/assets/fonts/Gilroy-Medium.eot</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-medium.svg public/assets/fonts/gilroy-medium.svg">
+        <div>
+          <div class="font-name">Gilroy-Medium.svg</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Medium</strong> | Format: <strong>SVG</strong> | Size: <strong>366.6 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Medium.svg')">
+          <span>public/assets/fonts/Gilroy-Medium.svg</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-medium.ttf public/assets/fonts/gilroy-medium.ttf">
+        <div>
+          <div class="font-name">Gilroy-Medium.ttf</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Medium</strong> | Format: <strong>TTF</strong> | Size: <strong>140.0 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Medium.ttf')">
+          <span>public/assets/fonts/Gilroy-Medium.ttf</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-medium.woff public/assets/fonts/gilroy-medium.woff">
+        <div>
+          <div class="font-name">Gilroy-Medium.woff</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Medium</strong> | Format: <strong>WOFF</strong> | Size: <strong>64.5 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Medium.woff')">
+          <span>public/assets/fonts/Gilroy-Medium.woff</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-medium.woff2 public/assets/fonts/gilroy-medium.woff2">
+        <div>
+          <div class="font-name">Gilroy-Medium.woff2</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Medium</strong> | Format: <strong>WOFF2</strong> | Size: <strong>44.1 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Medium.woff2')">
+          <span>public/assets/fonts/Gilroy-Medium.woff2</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-semibold.eot public/assets/fonts/gilroy-semibold.eot">
+        <div>
+          <div class="font-name">Gilroy-Semibold.eot</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Semibold</strong> | Format: <strong>EOT</strong> | Size: <strong>84.8 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Semibold.eot')">
+          <span>public/assets/fonts/Gilroy-Semibold.eot</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-semibold.svg public/assets/fonts/gilroy-semibold.svg">
+        <div>
+          <div class="font-name">Gilroy-Semibold.svg</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Semibold</strong> | Format: <strong>SVG</strong> | Size: <strong>378.5 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Semibold.svg')">
+          <span>public/assets/fonts/Gilroy-Semibold.svg</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-semibold.ttf public/assets/fonts/gilroy-semibold.ttf">
+        <div>
+          <div class="font-name">Gilroy-Semibold.ttf</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Semibold</strong> | Format: <strong>TTF</strong> | Size: <strong>84.6 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Semibold.ttf')">
+          <span>public/assets/fonts/Gilroy-Semibold.ttf</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-semibold.woff public/assets/fonts/gilroy-semibold.woff">
+        <div>
+          <div class="font-name">Gilroy-Semibold.woff</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Semibold</strong> | Format: <strong>WOFF</strong> | Size: <strong>39.8 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Semibold.woff')">
+          <span>public/assets/fonts/Gilroy-Semibold.woff</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+      <div class="font-row" data-name="gilroy-semibold.woff2 public/assets/fonts/gilroy-semibold.woff2">
+        <div>
+          <div class="font-name">Gilroy-Semibold.woff2</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Weight: <strong>Semibold</strong> | Format: <strong>WOFF2</strong> | Size: <strong>28.7 KB</strong></div>
+        </div>
+        <div class="font-sample">Build your tomorrow &bull; GO180 Personal Training</div>
+        <div class="path-box" style="margin: 0; min-width: 280px;" onclick="copyText('public/assets/fonts/Gilroy-Semibold.woff2')">
+          <span>public/assets/fonts/Gilroy-Semibold.woff2</span>
+          <button class="copy-btn">Copy Path</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. IMAGES SECTION -->
+  <section id="section-images">
+    <div class="section-header">
+      <h2>Photography & Gym Imagery <span class="section-count">100 Files</span></h2>
+      <span class="section-path">public/assets/images/</span>
+    </div>
+    <div class="grid">
+      <div class="card" data-name="appie-kooistra-1920x648.jpg.webp public/assets/images/appie-kooistra-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/Appie-Kooistra-1920x648.jpg.webp')">
+          <img src="../public/assets/images/Appie-Kooistra-1920x648.jpg.webp" alt="Appie-Kooistra-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="Appie-Kooistra-1920x648.jpg.webp">Appie-Kooistra-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/Appie-Kooistra-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/Appie-Kooistra-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 69.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr--scaled-e1776779811908.jpg.webp public/assets/images/aronweidenaar_hr--scaled-e1776779811908.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR--scaled-e1776779811908.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR--scaled-e1776779811908.jpg.webp" alt="AronWeidenaar_HR--scaled-e1776779811908.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR--scaled-e1776779811908.jpg.webp">AronWeidenaar_HR--scaled-e1776779811908.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR--scaled-e1776779811908.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR--scaled-e1776779811908.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 207.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-105-790x860.jpg.webp public/assets/images/aronweidenaar_hr-105-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-105-790x860.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-105-790x860.jpg.webp" alt="AronWeidenaar_HR-105-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-105-790x860.jpg.webp">AronWeidenaar_HR-105-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-105-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-105-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 50.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-15-scaled-e1776779643394.jpg.webp public/assets/images/aronweidenaar_hr-15-scaled-e1776779643394.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp" alt="AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp">AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-15-scaled-e1776779643394.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 92.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-18-scaled-e1776779630818.jpg.webp public/assets/images/aronweidenaar_hr-18-scaled-e1776779630818.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp" alt="AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1001</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp">AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-18-scaled-e1776779630818.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 152.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-2-scaled.jpg.webp public/assets/images/aronweidenaar_hr-2-scaled.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-2-scaled.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-2-scaled.jpg.webp" alt="AronWeidenaar_HR-2-scaled.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">2560x1707</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-2-scaled.jpg.webp">AronWeidenaar_HR-2-scaled.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-2-scaled.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-2-scaled.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 376.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-22-scaled.jpg.webp public/assets/images/aronweidenaar_hr-22-scaled.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-22-scaled.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-22-scaled.jpg.webp" alt="AronWeidenaar_HR-22-scaled.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">2560x1708</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-22-scaled.jpg.webp">AronWeidenaar_HR-22-scaled.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-22-scaled.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-22-scaled.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 347.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-26-scaled-e1776779592584.jpg.webp public/assets/images/aronweidenaar_hr-26-scaled-e1776779592584.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp" alt="AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp">AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-26-scaled-e1776779592584.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 128.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-28-scaled-e1776779578945.jpg.webp public/assets/images/aronweidenaar_hr-28-scaled-e1776779578945.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp" alt="AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp">AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-28-scaled-e1776779578945.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 115.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-30-scaled-e1776779564128.jpg.webp public/assets/images/aronweidenaar_hr-30-scaled-e1776779564128.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp" alt="AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp">AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-30-scaled-e1776779564128.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 71.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-32-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-32-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-32-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-32-1485x990.jpg.webp" alt="AronWeidenaar_HR-32-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-32-1485x990.jpg.webp">AronWeidenaar_HR-32-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-32-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-32-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 143.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-35-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-35-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-35-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-35-1485x990.jpg.webp" alt="AronWeidenaar_HR-35-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-35-1485x990.jpg.webp">AronWeidenaar_HR-35-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-35-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-35-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 79.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-36-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-36-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-36-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-36-1485x990.jpg.webp" alt="AronWeidenaar_HR-36-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-36-1485x990.jpg.webp">AronWeidenaar_HR-36-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-36-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-36-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 97.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-38-scaled.jpg.webp public/assets/images/aronweidenaar_hr-38-scaled.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-38-scaled.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-38-scaled.jpg.webp" alt="AronWeidenaar_HR-38-scaled.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">2560x1706</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-38-scaled.jpg.webp">AronWeidenaar_HR-38-scaled.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-38-scaled.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-38-scaled.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 823.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-40-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-40-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-40-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-40-1485x990.jpg.webp" alt="AronWeidenaar_HR-40-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-40-1485x990.jpg.webp">AronWeidenaar_HR-40-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-40-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-40-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 123.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-42-790x860.jpg.webp public/assets/images/aronweidenaar_hr-42-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-42-790x860.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-42-790x860.jpg.webp" alt="AronWeidenaar_HR-42-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-42-790x860.jpg.webp">AronWeidenaar_HR-42-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-42-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-42-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 66.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-4883-790x860.jpg.webp public/assets/images/aronweidenaar_hr-4883-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-4883-790x860.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-4883-790x860.jpg.webp" alt="AronWeidenaar_HR-4883-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-4883-790x860.jpg.webp">AronWeidenaar_HR-4883-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-4883-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-4883-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 138.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-52-scaled-e1776779399985.jpg.webp public/assets/images/aronweidenaar_hr-52-scaled-e1776779399985.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp" alt="AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp">AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 312.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-53-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-53-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-53-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-53-1485x990.jpg.webp" alt="AronWeidenaar_HR-53-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-53-1485x990.jpg.webp">AronWeidenaar_HR-53-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-53-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-53-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 88.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-58-1920x648.jpg.webp public/assets/images/aronweidenaar_hr-58-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-58-1920x648.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-58-1920x648.jpg.webp" alt="AronWeidenaar_HR-58-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-58-1920x648.jpg.webp">AronWeidenaar_HR-58-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-58-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-58-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 85.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-6-scaled-e1776779778510.jpg.webp public/assets/images/aronweidenaar_hr-6-scaled-e1776779778510.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp" alt="AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp">AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-6-scaled-e1776779778510.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 124.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-60-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-60-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-60-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-60-1485x990.jpg.webp" alt="AronWeidenaar_HR-60-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-60-1485x990.jpg.webp">AronWeidenaar_HR-60-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-60-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-60-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 122.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-65-scaled-e1776779296771.jpg.webp public/assets/images/aronweidenaar_hr-65-scaled-e1776779296771.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp" alt="AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp">AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-65-scaled-e1776779296771.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 121.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-68-1920x648.jpg.webp public/assets/images/aronweidenaar_hr-68-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-68-1920x648.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-68-1920x648.jpg.webp" alt="AronWeidenaar_HR-68-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-68-1920x648.jpg.webp">AronWeidenaar_HR-68-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-68-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-68-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 71.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-71-scaled-e1776779023344.jpg.webp public/assets/images/aronweidenaar_hr-71-scaled-e1776779023344.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp" alt="AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp">AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-71-scaled-e1776779023344.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 97.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-73-scaled-e1776779011797.jpg.webp public/assets/images/aronweidenaar_hr-73-scaled-e1776779011797.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp" alt="AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1001</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp">AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-73-scaled-e1776779011797.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 92.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-74-scaled-e1776779004627.jpg.webp public/assets/images/aronweidenaar_hr-74-scaled-e1776779004627.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp" alt="AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1001</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp">AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-74-scaled-e1776779004627.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 146.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-76-scaled-e1776778997134.jpg.webp public/assets/images/aronweidenaar_hr-76-scaled-e1776778997134.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp" alt="AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp">AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-76-scaled-e1776778997134.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 118.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-78-scaled-e1776778985975.jpg.webp public/assets/images/aronweidenaar_hr-78-scaled-e1776778985975.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp" alt="AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1500x1000</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp">AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-78-scaled-e1776778985975.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 238.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-81-790x860.jpg.webp public/assets/images/aronweidenaar_hr-81-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-81-790x860.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-81-790x860.jpg.webp" alt="AronWeidenaar_HR-81-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-81-790x860.jpg.webp">AronWeidenaar_HR-81-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-81-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-81-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 39.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-82-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-82-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-82-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-82-1485x990.jpg.webp" alt="AronWeidenaar_HR-82-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-82-1485x990.jpg.webp">AronWeidenaar_HR-82-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-82-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-82-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 129.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-86-790x860.jpg.webp public/assets/images/aronweidenaar_hr-86-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-86-790x860.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-86-790x860.jpg.webp" alt="AronWeidenaar_HR-86-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-86-790x860.jpg.webp">AronWeidenaar_HR-86-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-86-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-86-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 75.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-91-1485x990.jpg.webp public/assets/images/aronweidenaar_hr-91-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-91-1485x990.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-91-1485x990.jpg.webp" alt="AronWeidenaar_HR-91-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-91-1485x990.jpg.webp">AronWeidenaar_HR-91-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-91-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-91-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 370.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_hr-92-1920x648.jpg.webp public/assets/images/aronweidenaar_hr-92-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_HR-92-1920x648.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_HR-92-1920x648.jpg.webp" alt="AronWeidenaar_HR-92-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_HR-92-1920x648.jpg.webp">AronWeidenaar_HR-92-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_HR-92-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_HR-92-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 326.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="aronweidenaar_lr-8501-1800x648.jpg.webp public/assets/images/aronweidenaar_lr-8501-1800x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/AronWeidenaar_LR-8501-1800x648.jpg.webp')">
+          <img src="../public/assets/images/AronWeidenaar_LR-8501-1800x648.jpg.webp" alt="AronWeidenaar_LR-8501-1800x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1800x648</span>
+          </div>
+          <div class="card-title" title="AronWeidenaar_LR-8501-1800x648.jpg.webp">AronWeidenaar_LR-8501-1800x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/AronWeidenaar_LR-8501-1800x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/AronWeidenaar_LR-8501-1800x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 71.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="dscf7905-scaled-e1785248816279.jpg.webp public/assets/images/dscf7905-scaled-e1785248816279.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/DSCF7905-scaled-e1785248816279.jpg.webp')">
+          <img src="../public/assets/images/DSCF7905-scaled-e1785248816279.jpg.webp" alt="DSCF7905-scaled-e1785248816279.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1847x1706</span>
+          </div>
+          <div class="card-title" title="DSCF7905-scaled-e1785248816279.jpg.webp">DSCF7905-scaled-e1785248816279.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/DSCF7905-scaled-e1785248816279.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/DSCF7905-scaled-e1785248816279.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 635.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="dscf7972-2-1-scaled.jpg.webp public/assets/images/dscf7972-2-1-scaled.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/DSCF7972-2-1-scaled.jpg.webp')">
+          <img src="../public/assets/images/DSCF7972-2-1-scaled.jpg.webp" alt="DSCF7972-2-1-scaled.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">2560x1707</span>
+          </div>
+          <div class="card-title" title="DSCF7972-2-1-scaled.jpg.webp">DSCF7972-2-1-scaled.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/DSCF7972-2-1-scaled.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/DSCF7972-2-1-scaled.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 673.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="doe-wat-werkt-voor-jou-1024x576-1.png.webp public/assets/images/doe-wat-werkt-voor-jou-1024x576-1.png.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/Doe-wat-werkt-voor-jou-1024x576-1.png.webp')">
+          <img src="../public/assets/images/Doe-wat-werkt-voor-jou-1024x576-1.png.webp" alt="Doe-wat-werkt-voor-jou-1024x576-1.png.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1024x576</span>
+          </div>
+          <div class="card-title" title="Doe-wat-werkt-voor-jou-1024x576-1.png.webp">Doe-wat-werkt-voor-jou-1024x576-1.png.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/Doe-wat-werkt-voor-jou-1024x576-1.png.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/Doe-wat-werkt-voor-jou-1024x576-1.png.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 45.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-100-790x860.jpg.webp public/assets/images/go180-100-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-100-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-100-790x860.jpg.webp" alt="GO180-100-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-100-790x860.jpg.webp">GO180-100-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-100-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-100-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 34.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-105-790x860.jpg.webp public/assets/images/go180-105-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-105-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-105-790x860.jpg.webp" alt="GO180-105-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-105-790x860.jpg.webp">GO180-105-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-105-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-105-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 59.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-112-1920x648.jpg.webp public/assets/images/go180-112-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-112-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-112-1920x648.jpg.webp" alt="GO180-112-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-112-1920x648.jpg.webp">GO180-112-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-112-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-112-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 272.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-123-790x860.jpg.webp public/assets/images/go180-123-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-123-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-123-790x860.jpg.webp" alt="GO180-123-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-123-790x860.jpg.webp">GO180-123-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-123-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-123-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 91.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-126-1920x648.jpg.webp public/assets/images/go180-126-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-126-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-126-1920x648.jpg.webp" alt="GO180-126-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-126-1920x648.jpg.webp">GO180-126-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-126-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-126-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 143.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-134-scaled-e1689084980378.jpg.webp public/assets/images/go180-134-scaled-e1689084980378.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-134-scaled-e1689084980378.jpg.webp')">
+          <img src="../public/assets/images/GO180-134-scaled-e1689084980378.jpg.webp" alt="GO180-134-scaled-e1689084980378.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1200x801</span>
+          </div>
+          <div class="card-title" title="GO180-134-scaled-e1689084980378.jpg.webp">GO180-134-scaled-e1689084980378.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-134-scaled-e1689084980378.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-134-scaled-e1689084980378.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 100.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-146-790x860.jpg.webp public/assets/images/go180-146-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-146-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-146-790x860.jpg.webp" alt="GO180-146-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-146-790x860.jpg.webp">GO180-146-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-146-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-146-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 42.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-150-scaled-e1695809898674.jpg.webp public/assets/images/go180-150-scaled-e1695809898674.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-150-scaled-e1695809898674.jpg.webp')">
+          <img src="../public/assets/images/GO180-150-scaled-e1695809898674.jpg.webp" alt="GO180-150-scaled-e1695809898674.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">800x534</span>
+          </div>
+          <div class="card-title" title="GO180-150-scaled-e1695809898674.jpg.webp">GO180-150-scaled-e1695809898674.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-150-scaled-e1695809898674.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-150-scaled-e1695809898674.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 89.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-154lr1920x1080.webp public/assets/images/go180-154lr1920x1080.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-154LR1920x1080.webp')">
+          <img src="../public/assets/images/GO180-154LR1920x1080.webp" alt="GO180-154LR1920x1080.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x1080</span>
+          </div>
+          <div class="card-title" title="GO180-154LR1920x1080.webp">GO180-154LR1920x1080.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-154LR1920x1080.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-154LR1920x1080.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 86.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-158lr1920x1080-790x860.webp public/assets/images/go180-158lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-158LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-158LR1920x1080-790x860.webp" alt="GO180-158LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-158LR1920x1080-790x860.webp">GO180-158LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-158LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-158LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 58.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-16-790x860.jpg.webp public/assets/images/go180-16-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-16-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-16-790x860.jpg.webp" alt="GO180-16-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-16-790x860.jpg.webp">GO180-16-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-16-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-16-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 47.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-166-790x860.jpg.webp public/assets/images/go180-166-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-166-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-166-790x860.jpg.webp" alt="GO180-166-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-166-790x860.jpg.webp">GO180-166-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-166-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-166-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 39.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-168lr1920x1080-790x860.webp public/assets/images/go180-168lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-168LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-168LR1920x1080-790x860.webp" alt="GO180-168LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-168LR1920x1080-790x860.webp">GO180-168LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-168LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-168LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 24.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-176lr1920x1080-790x860.webp public/assets/images/go180-176lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-176LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-176LR1920x1080-790x860.webp" alt="GO180-176LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-176LR1920x1080-790x860.webp">GO180-176LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-176LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-176LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 83.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-184lr1920x1080-790x860.webp public/assets/images/go180-184lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-184LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-184LR1920x1080-790x860.webp" alt="GO180-184LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-184LR1920x1080-790x860.webp">GO180-184LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-184LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-184LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 40.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-190lr1920x1080.webp public/assets/images/go180-190lr1920x1080.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-190LR1920x1080.webp')">
+          <img src="../public/assets/images/GO180-190LR1920x1080.webp" alt="GO180-190LR1920x1080.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x1080</span>
+          </div>
+          <div class="card-title" title="GO180-190LR1920x1080.webp">GO180-190LR1920x1080.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-190LR1920x1080.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-190LR1920x1080.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 88.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-194lr1920x1080-790x860.webp public/assets/images/go180-194lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-194LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-194LR1920x1080-790x860.webp" alt="GO180-194LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-194LR1920x1080-790x860.webp">GO180-194LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-194LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-194LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 62.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-197lr1920x1080-790x860.webp public/assets/images/go180-197lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-197LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-197LR1920x1080-790x860.webp" alt="GO180-197LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-197LR1920x1080-790x860.webp">GO180-197LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-197LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-197LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 37.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-202lr1920x1080-790x860.webp public/assets/images/go180-202lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-202LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-202LR1920x1080-790x860.webp" alt="GO180-202LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-202LR1920x1080-790x860.webp">GO180-202LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-202LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-202LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 40.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-205lr1920x1080-790x860.webp public/assets/images/go180-205lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-205LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-205LR1920x1080-790x860.webp" alt="GO180-205LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-205LR1920x1080-790x860.webp">GO180-205LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-205LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-205LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 110.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-206lr1920x1080-790x860.webp public/assets/images/go180-206lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-206LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-206LR1920x1080-790x860.webp" alt="GO180-206LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-206LR1920x1080-790x860.webp">GO180-206LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-206LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-206LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 50.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-21-1920x648.jpg.webp public/assets/images/go180-21-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-21-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-21-1920x648.jpg.webp" alt="GO180-21-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-21-1920x648.jpg.webp">GO180-21-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-21-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-21-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 53.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-211lr1920x1080-790x860.webp public/assets/images/go180-211lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-211LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-211LR1920x1080-790x860.webp" alt="GO180-211LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-211LR1920x1080-790x860.webp">GO180-211LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-211LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-211LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 102.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-212lr1920x1080-790x860.webp public/assets/images/go180-212lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-212LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-212LR1920x1080-790x860.webp" alt="GO180-212LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-212LR1920x1080-790x860.webp">GO180-212LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-212LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-212LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 45.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-213lr1920x1080-790x860.webp public/assets/images/go180-213lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-213LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-213LR1920x1080-790x860.webp" alt="GO180-213LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-213LR1920x1080-790x860.webp">GO180-213LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-213LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-213LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 60.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-222lr1920x1080.webp public/assets/images/go180-222lr1920x1080.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-222LR1920x1080.webp')">
+          <img src="../public/assets/images/GO180-222LR1920x1080.webp" alt="GO180-222LR1920x1080.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x1080</span>
+          </div>
+          <div class="card-title" title="GO180-222LR1920x1080.webp">GO180-222LR1920x1080.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-222LR1920x1080.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-222LR1920x1080.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 144.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-224lr1920x1080.webp public/assets/images/go180-224lr1920x1080.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-224LR1920x1080.webp')">
+          <img src="../public/assets/images/GO180-224LR1920x1080.webp" alt="GO180-224LR1920x1080.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x1080</span>
+          </div>
+          <div class="card-title" title="GO180-224LR1920x1080.webp">GO180-224LR1920x1080.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-224LR1920x1080.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-224LR1920x1080.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 165.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-232lr1920x1080-1920x648.webp public/assets/images/go180-232lr1920x1080-1920x648.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-232LR1920x1080-1920x648.webp')">
+          <img src="../public/assets/images/GO180-232LR1920x1080-1920x648.webp" alt="GO180-232LR1920x1080-1920x648.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-232LR1920x1080-1920x648.webp">GO180-232LR1920x1080-1920x648.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-232LR1920x1080-1920x648.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-232LR1920x1080-1920x648.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 186.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-237lr1920x1080-1920x648.webp public/assets/images/go180-237lr1920x1080-1920x648.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-237LR1920x1080-1920x648.webp')">
+          <img src="../public/assets/images/GO180-237LR1920x1080-1920x648.webp" alt="GO180-237LR1920x1080-1920x648.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-237LR1920x1080-1920x648.webp">GO180-237LR1920x1080-1920x648.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-237LR1920x1080-1920x648.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-237LR1920x1080-1920x648.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 164.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-239lr1920x1080.webp public/assets/images/go180-239lr1920x1080.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-239LR1920x1080.webp')">
+          <img src="../public/assets/images/GO180-239LR1920x1080.webp" alt="GO180-239LR1920x1080.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x1080</span>
+          </div>
+          <div class="card-title" title="GO180-239LR1920x1080.webp">GO180-239LR1920x1080.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-239LR1920x1080.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-239LR1920x1080.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 269.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-243lr1920x1080-790x860.webp public/assets/images/go180-243lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-243LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-243LR1920x1080-790x860.webp" alt="GO180-243LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-243LR1920x1080-790x860.webp">GO180-243LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-243LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-243LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 33.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-28-1920x648.jpg.webp public/assets/images/go180-28-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-28-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-28-1920x648.jpg.webp" alt="GO180-28-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-28-1920x648.jpg.webp">GO180-28-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-28-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-28-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 57.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-32-790x860.jpg.webp public/assets/images/go180-32-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-32-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-32-790x860.jpg.webp" alt="GO180-32-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-32-790x860.jpg.webp">GO180-32-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-32-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-32-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 46.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-42lr1920x1080-790x860.webp public/assets/images/go180-42lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-42LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-42LR1920x1080-790x860.webp" alt="GO180-42LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-42LR1920x1080-790x860.webp">GO180-42LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-42LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-42LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 84.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-46-790x860.jpg.webp public/assets/images/go180-46-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-46-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-46-790x860.jpg.webp" alt="GO180-46-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-46-790x860.jpg.webp">GO180-46-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-46-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-46-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 57.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-47-790x860.jpg.webp public/assets/images/go180-47-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-47-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-47-790x860.jpg.webp" alt="GO180-47-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-47-790x860.jpg.webp">GO180-47-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-47-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-47-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 19.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-48-790x860.jpg.webp public/assets/images/go180-48-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-48-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-48-790x860.jpg.webp" alt="GO180-48-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-48-790x860.jpg.webp">GO180-48-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-48-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-48-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 41.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-64-790x860.jpg.webp public/assets/images/go180-64-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-64-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-64-790x860.jpg.webp" alt="GO180-64-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-64-790x860.jpg.webp">GO180-64-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-64-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-64-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 50.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-7-scaled-e1695809883842.jpg.webp public/assets/images/go180-7-scaled-e1695809883842.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-7-scaled-e1695809883842.jpg.webp')">
+          <img src="../public/assets/images/GO180-7-scaled-e1695809883842.jpg.webp" alt="GO180-7-scaled-e1695809883842.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">800x534</span>
+          </div>
+          <div class="card-title" title="GO180-7-scaled-e1695809883842.jpg.webp">GO180-7-scaled-e1695809883842.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-7-scaled-e1695809883842.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-7-scaled-e1695809883842.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 34.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-70-1920x648.jpg.webp public/assets/images/go180-70-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-70-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-70-1920x648.jpg.webp" alt="GO180-70-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-70-1920x648.jpg.webp">GO180-70-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-70-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-70-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 124.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-72-1920x648.jpg.webp public/assets/images/go180-72-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-72-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-72-1920x648.jpg.webp" alt="GO180-72-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-72-1920x648.jpg.webp">GO180-72-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-72-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-72-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 165.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-78-1485x990.jpg.webp public/assets/images/go180-78-1485x990.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-78-1485x990.jpg.webp')">
+          <img src="../public/assets/images/GO180-78-1485x990.jpg.webp" alt="GO180-78-1485x990.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1485x990</span>
+          </div>
+          <div class="card-title" title="GO180-78-1485x990.jpg.webp">GO180-78-1485x990.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-78-1485x990.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-78-1485x990.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 88.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-79-1920x648.jpg.webp public/assets/images/go180-79-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-79-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-79-1920x648.jpg.webp" alt="GO180-79-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-79-1920x648.jpg.webp">GO180-79-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-79-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-79-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 67.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-79lr1920x1080-790x860.webp public/assets/images/go180-79lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-79LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-79LR1920x1080-790x860.webp" alt="GO180-79LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-79LR1920x1080-790x860.webp">GO180-79LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-79LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-79LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 36.8 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-81-scaled-e1695809915448.jpg.webp public/assets/images/go180-81-scaled-e1695809915448.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-81-scaled-e1695809915448.jpg.webp')">
+          <img src="../public/assets/images/GO180-81-scaled-e1695809915448.jpg.webp" alt="GO180-81-scaled-e1695809915448.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">800x534</span>
+          </div>
+          <div class="card-title" title="GO180-81-scaled-e1695809915448.jpg.webp">GO180-81-scaled-e1695809915448.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-81-scaled-e1695809915448.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-81-scaled-e1695809915448.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 46.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-82lr1920x1080-790x860.webp public/assets/images/go180-82lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-82LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-82LR1920x1080-790x860.webp" alt="GO180-82LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-82LR1920x1080-790x860.webp">GO180-82LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-82LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-82LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 80.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-86-1920x648.jpg.webp public/assets/images/go180-86-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-86-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-86-1920x648.jpg.webp" alt="GO180-86-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-86-1920x648.jpg.webp">GO180-86-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-86-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-86-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 114.3 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-87-scaled-e1700061950365.jpg.webp public/assets/images/go180-87-scaled-e1700061950365.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-87-scaled-e1700061950365.jpg.webp')">
+          <img src="../public/assets/images/GO180-87-scaled-e1700061950365.jpg.webp" alt="GO180-87-scaled-e1700061950365.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1000x668</span>
+          </div>
+          <div class="card-title" title="GO180-87-scaled-e1700061950365.jpg.webp">GO180-87-scaled-e1700061950365.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-87-scaled-e1700061950365.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-87-scaled-e1700061950365.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 45.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-98lr1920x1080-790x860.webp public/assets/images/go180-98lr1920x1080-790x860.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-98LR1920x1080-790x860.webp')">
+          <img src="../public/assets/images/GO180-98LR1920x1080-790x860.webp" alt="GO180-98LR1920x1080-790x860.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-98LR1920x1080-790x860.webp">GO180-98LR1920x1080-790x860.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-98LR1920x1080-790x860.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-98LR1920x1080-790x860.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 55.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-102-1920x648.jpg.webp public/assets/images/go180-leeuwarden-102-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-102-1920x648.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-102-1920x648.jpg.webp" alt="GO180-Leeuwarden-102-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-102-1920x648.jpg.webp">GO180-Leeuwarden-102-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-102-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-102-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 153.9 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-18lr-e1667206225214.jpg.webp public/assets/images/go180-leeuwarden-18lr-e1667206225214.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-18LR-e1667206225214.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-18LR-e1667206225214.jpg.webp" alt="GO180-Leeuwarden-18LR-e1667206225214.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1000x667</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-18LR-e1667206225214.jpg.webp">GO180-Leeuwarden-18LR-e1667206225214.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-18LR-e1667206225214.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-18LR-e1667206225214.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 26.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-38-790x860.jpg.webp public/assets/images/go180-leeuwarden-38-790x860.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-38-790x860.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-38-790x860.jpg.webp" alt="GO180-Leeuwarden-38-790x860.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-38-790x860.jpg.webp">GO180-Leeuwarden-38-790x860.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-38-790x860.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-38-790x860.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 49.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-44-scaled-e1667206331575.jpg.webp public/assets/images/go180-leeuwarden-44-scaled-e1667206331575.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp" alt="GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1000x667</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp">GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-44-scaled-e1667206331575.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 50.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-52-scaled-e1700061750928.jpg.webp public/assets/images/go180-leeuwarden-52-scaled-e1700061750928.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp" alt="GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1000x667</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp">GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-52-scaled-e1700061750928.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 45.4 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-leeuwarden-60-scaled-e1700061850876.jpg.webp public/assets/images/go180-leeuwarden-60-scaled-e1700061850876.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp')">
+          <img src="../public/assets/images/GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp" alt="GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1000x668</span>
+          </div>
+          <div class="card-title" title="GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp">GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-Leeuwarden-60-scaled-e1700061850876.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 11.2 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-receptenboek-hr23.jpg.webp public/assets/images/go180-receptenboek-hr23.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-receptenboek-HR23.jpg.webp')">
+          <img src="../public/assets/images/GO180-receptenboek-HR23.jpg.webp" alt="GO180-receptenboek-HR23.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-receptenboek-HR23.jpg.webp">GO180-receptenboek-HR23.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-receptenboek-HR23.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-receptenboek-HR23.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 188.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-receptenboek-hr30.jpg.webp public/assets/images/go180-receptenboek-hr30.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-receptenboek-HR30.jpg.webp')">
+          <img src="../public/assets/images/GO180-receptenboek-HR30.jpg.webp" alt="GO180-receptenboek-HR30.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-receptenboek-HR30.jpg.webp">GO180-receptenboek-HR30.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-receptenboek-HR30.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-receptenboek-HR30.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 86.0 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-receptenboek-hr37.jpg.webp public/assets/images/go180-receptenboek-hr37.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-receptenboek-HR37.jpg.webp')">
+          <img src="../public/assets/images/GO180-receptenboek-HR37.jpg.webp" alt="GO180-receptenboek-HR37.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-receptenboek-HR37.jpg.webp">GO180-receptenboek-HR37.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-receptenboek-HR37.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-receptenboek-HR37.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 198.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-receptenboek-hr42.jpg.webp public/assets/images/go180-receptenboek-hr42.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-receptenboek-HR42.jpg.webp')">
+          <img src="../public/assets/images/GO180-receptenboek-HR42.jpg.webp" alt="GO180-receptenboek-HR42.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">790x860</span>
+          </div>
+          <div class="card-title" title="GO180-receptenboek-HR42.jpg.webp">GO180-receptenboek-HR42.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-receptenboek-HR42.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-receptenboek-HR42.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 188.5 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-receptenboek-hr68-e1700061972349.jpg.webp public/assets/images/go180-receptenboek-hr68-e1700061972349.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-receptenboek-HR68-e1700061972349.jpg.webp')">
+          <img src="../public/assets/images/GO180-receptenboek-HR68-e1700061972349.jpg.webp" alt="GO180-receptenboek-HR68-e1700061972349.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">500x544</span>
+          </div>
+          <div class="card-title" title="GO180-receptenboek-HR68-e1700061972349.jpg.webp">GO180-receptenboek-HR68-e1700061972349.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-receptenboek-HR68-e1700061972349.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-receptenboek-HR68-e1700061972349.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 39.1 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="go180-scaled-e1695809865642.jpg.webp public/assets/images/go180-scaled-e1695809865642.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/GO180-scaled-e1695809865642.jpg.webp')">
+          <img src="../public/assets/images/GO180-scaled-e1695809865642.jpg.webp" alt="GO180-scaled-e1695809865642.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">800x534</span>
+          </div>
+          <div class="card-title" title="GO180-scaled-e1695809865642.jpg.webp">GO180-scaled-e1695809865642.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/GO180-scaled-e1695809865642.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/GO180-scaled-e1695809865642.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 35.6 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="thomas-kramer-1920x648.jpg.webp public/assets/images/thomas-kramer-1920x648.jpg.webp">
+        <div class="card-media" onclick="openLightbox('../public/assets/images/Thomas-Kramer-1920x648.jpg.webp')">
+          <img src="../public/assets/images/Thomas-Kramer-1920x648.jpg.webp" alt="Thomas-Kramer-1920x648.jpg.webp" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="badge-format">WEBP</span>
+            <span style="font-size: 11px; color: var(--text-muted);">1920x648</span>
+          </div>
+          <div class="card-title" title="Thomas-Kramer-1920x648.jpg.webp">Thomas-Kramer-1920x648.jpg.webp</div>
+          <div class="path-box" onclick="copyText('public/assets/images/Thomas-Kramer-1920x648.jpg.webp')">
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">public/assets/images/Thomas-Kramer-1920x648.jpg.webp</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <div class="card-footer">
+            <span>Size: 95.7 KB</span>
+            <span>High-Res</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 3D MODELS SECTION -->
+  <section id="section-3d">
+    <div class="section-header">
+      <h2>3D Models & WebGL Scenes <span class="section-count">1 Audit Record</span></h2>
+      <span class="section-path">public/assets/3d/</span>
+    </div>
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <div style="font-size: 16px; font-weight: 700; color: #f5f8fa;">3D Models Status: <span style="color: var(--accent-green);">Inspected & Verified (0 Present on Reference Site)</span></div>
+        <span class="badge-format">DOCUMENTATION</span>
+      </div>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        A deep scan of the reference site scripts (<code>main.js</code>), DOM elements, and stylesheets was executed for 3D frameworks and formats including <code>Three.js</code>, <code>Babylon.js</code>, <code>Spline</code>, <code>WebGL</code>, <code>GLTF</code>, <code>GLB</code>, and <code>OBJ</code>. No 3D model meshes or interactive canvas scenes exist on https://go180.nl/.
+      </p>
+      <div style="font-size: 13px; font-weight: 600; margin-bottom: 6px;">Folder Status & Placeholder:</div>
+      <div class="path-box" style="max-width: 500px;" onclick="copyText('public/assets/3d/README.md')">
+        <span>public/assets/3d/README.md</span>
+        <button class="copy-btn">Copy Path</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast">Path copied to clipboard!</div>
+
+<script>
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  lb.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('Copied: ' + text);
+  }).catch(() => {
+    showToast('Path: ' + text);
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.innerText = msg;
+  t.classList.add('show');
+  setTimeout(() => { t.classList.remove('show'); }, 2500);
+}
+
+function applyFilter() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.card, .font-row');
+  cards.forEach(c => {
+    const name = c.dataset.name || '';
+    if (!q || name.includes(q)) {
+      c.style.display = c.classList.contains('font-row') ? 'flex' : 'flex';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

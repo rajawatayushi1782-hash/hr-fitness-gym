@@ -1,0 +1,166 @@
+[
+  {
+    "page": "club-leeuwarden.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 3,
+    "hasNavContainer": false,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "home.html",
+    "type": "Reviews Swiper Carousel",
+    "slidesCount": 51,
+    "selector": ".swiper"
+  },
+  {
+    "page": "home.html",
+    "type": "Other gallery/slider",
+    "matches": [
+      "<div class=\"swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-autoheight swiper-watch-progress\""
+    ]
+  },
+  {
+    "page": "programs-adaptable.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 8,
+    "hasNavContainer": true,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "programs-adaptable.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 6,
+    "navPointsCount": 12,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-adaptable.html",
+    "type": "Other gallery/slider",
+    "matches": [
+      "<div class=\"vjs-volume-panel vjs-control vjs-volume-panel-horizontal\"",
+      "<div class=\"vjs-volume-control vjs-control vjs-volume-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-progress-holder vjs-slider vjs-slider-horizontal\""
+    ]
+  },
+  {
+    "page": "programs-digital-coaching.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 4,
+    "navPointsCount": 8,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-essentials.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 2,
+    "hasNavContainer": false,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "programs-essentials.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 4,
+    "navPointsCount": 8,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-essentials.html",
+    "type": "Other gallery/slider",
+    "matches": [
+      "<div class=\"vjs-volume-panel vjs-control vjs-volume-panel-horizontal\"",
+      "<div class=\"vjs-volume-control vjs-control vjs-volume-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-progress-holder vjs-slider vjs-slider-horizontal\""
+    ]
+  },
+  {
+    "page": "programs-fundamentals.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 3,
+    "hasNavContainer": true,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "programs-fundamentals.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 6,
+    "navPointsCount": 12,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-fundamentals.html",
+    "type": "Other gallery/slider",
+    "matches": [
+      "<div class=\"vjs-volume-panel vjs-control vjs-volume-panel-horizontal\"",
+      "<div class=\"vjs-volume-control vjs-control vjs-volume-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-progress-holder vjs-slider vjs-slider-horizontal\""
+    ]
+  },
+  {
+    "page": "programs-go2day.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 3,
+    "navPointsCount": 6,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-go2gether.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 6,
+    "hasNavContainer": true,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "programs-go2gether.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 5,
+    "navPointsCount": 10,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-go2gether.html",
+    "type": "Other gallery/slider",
+    "matches": [
+      "<div class=\"vjs-volume-panel vjs-control vjs-volume-panel-horizontal\"",
+      "<div class=\"vjs-volume-control vjs-control vjs-volume-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal\"",
+      "<div tabindex=\"0\" class=\"vjs-progress-holder vjs-slider vjs-slider-horizontal\""
+    ]
+  },
+  {
+    "page": "programs-healthy-ageing.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 3,
+    "navPointsCount": 6,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs-hyrox.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 4,
+    "navPointsCount": 8,
+    "selector": ".dragSlider"
+  },
+  {
+    "page": "programs.html",
+    "type": "Archive Slider (.archiveSlider)",
+    "slidesCount": 16,
+    "selector": ".archiveSlider"
+  },
+  {
+    "page": "we-are-go180.html",
+    "type": "Slick Carousel (.carousel__holder)",
+    "slidesCount": 3,
+    "hasNavContainer": true,
+    "selector": ".carousel__holder"
+  },
+  {
+    "page": "we-are-go180.html",
+    "type": "GSAP DragSlider (.dragSlider)",
+    "slidesCount": 4,
+    "navPointsCount": 8,
+    "selector": ".dragSlider"
+  }
+]

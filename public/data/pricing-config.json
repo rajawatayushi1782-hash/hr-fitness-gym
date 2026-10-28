@@ -1,0 +1,135 @@
+{
+  "businessName": "HR Fitness Club",
+  "location": "312, Near Axis Bank, Suresh Nagar Chauraha, Thatipur, Gwalior, Madhya Pradesh – 474011",
+  "phone": "+91 83199 50446",
+  "hours": "Monday to Saturday: 6:00 AM – 11:00 PM",
+  "currency": "INR",
+  "currencySymbol": "₹",
+  "requires_owner_confirmation": true,
+  "status": "Placeholder estimates for owner confirmation - Not displayed as verified fixed amounts to customers",
+  "callToAction": "Contact Us for Membership Plans",
+  "contactPhone": "+918319950446",
+  "contactUrl": "/contact/",
+  "membershipPlans": [
+    {
+      "id": "monthly",
+      "name": "Monthly Membership",
+      "duration": "1 Month",
+      "placeholderPriceINR": "₹1,500",
+      "billingPeriod": "per month",
+      "verified": false,
+      "features": [
+        "Full gym floor & modern weight training access",
+        "Cardio zone & stamina equipment",
+        "Locker facility & shower rooms",
+        "Certified floor trainer guidance",
+        "Flexible morning & evening workout slots"
+      ]
+    },
+    {
+      "id": "quarterly",
+      "name": "Quarterly Plan (3 Months)",
+      "duration": "3 Months",
+      "placeholderPriceINR": "₹4,000",
+      "billingPeriod": "per 3 months",
+      "verified": false,
+      "features": [
+        "Complete gym and cardio training access",
+        "Body composition assessment every 4 weeks",
+        "Personalized workout routine guidance",
+        "Locker access & certified trainer support",
+        "Cost-effective quarterly savings"
+      ]
+    },
+    {
+      "id": "half-yearly",
+      "name": "Half-Yearly Plan (6 Months)",
+      "duration": "6 Months",
+      "placeholderPriceINR": "₹7,200",
+      "billingPeriod": "per 6 months",
+      "verified": false,
+      "features": [
+        "Full access to gym, strength & cardio facilities",
+        "Periodic progress monitoring & fitness reviews",
+        "Dietary & nutritional lifestyle tips",
+        "Dedicated trainer consultation on floor",
+        "Popular plan for sustained transformation"
+      ]
+    },
+    {
+      "id": "annual",
+      "name": "Annual Membership (12 Months)",
+      "duration": "12 Months",
+      "placeholderPriceINR": "₹12,000",
+      "billingPeriod": "per year",
+      "verified": false,
+      "features": [
+        "Best overall value for year-round fitness",
+        "Unlimited access during opening hours (6 AM – 11 PM)",
+        "Comprehensive fitness tracking & milestone tests",
+        "Complimentary fitness assessment sessions",
+        "Locker & amenity privileges"
+      ]
+    },
+    {
+      "id": "personal-training-essentials",
+      "name": "Personal Training (12 Weeks)",
+      "duration": "12 Weeks (3 Months)",
+      "placeholderPriceINR": "₹15,000",
+      "billingPeriod": "tailored package",
+      "verified": false,
+      "features": [
+        "One-on-one dedicated certified trainer",
+        "Customized strength & fat-loss exercise program",
+        "Personalized nutrition & diet guidance",
+        "Direct continuous motivation & technique correction",
+        "Measurable body transformation targets"
+      ]
+    },
+    {
+      "id": "personal-training-fundamentals",
+      "name": "Personal Training (6 Months)",
+      "duration": "6 Months",
+      "placeholderPriceINR": "₹25,000",
+      "billingPeriod": "tailored package",
+      "verified": false,
+      "features": [
+        "Long-term 1-on-1 personal coaching & lifestyle overhaul",
+        "Advanced periodized training routines",
+        "Nutritional counseling & habit coaching",
+        "Flexible session scheduling with your coach",
+        "Sustained posture, strength, and endurance gains"
+      ]
+    },
+    {
+      "id": "group-fitness",
+      "name": "Group Fitness & Conditioning",
+      "duration": "Monthly / Flexible",
+      "placeholderPriceINR": "₹2,500",
+      "billingPeriod": "per month",
+      "verified": false,
+      "features": [
+        "High-energy group workouts with experienced coaches",
+        "Functional strength, HIIT, and endurance drills",
+        "Motivating community environment in Thatipur",
+        "Weekly progress tracking",
+        "Suitable for all fitness levels"
+      ]
+    },
+    {
+      "id": "corporate-duo",
+      "name": "Corporate & Duo Packages",
+      "duration": "Custom (6 or 12 Months)",
+      "placeholderPriceINR": "Custom Quote",
+      "billingPeriod": "custom",
+      "verified": false,
+      "features": [
+        "Special rates for couples, workout partners, or corporate teams",
+        "Team wellness and fitness conditioning programs",
+        "Customizable schedules and dedicated group trainers",
+        "Health & lifestyle workshops",
+        "Tailored corporate invoicing"
+      ]
+    }
+  ]
+}

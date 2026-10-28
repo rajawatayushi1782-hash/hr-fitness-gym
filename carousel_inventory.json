@@ -1,0 +1,759 @@
+{
+  "algemene-voorwaarden.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "club-leeuwarden.html": {
+    "patterns": [
+      "carousel",
+      "arrowScroll"
+    ],
+    "classes": [
+      "carousel spacer-v",
+      "carousel__holder",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyload",
+      "carousel__txt"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-annick-douma.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-appie-kooistra.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-arjon-van-der-wal.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-hielke-feenstra.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-hielke-van-der-lei.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coach-thomas-kramer.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "coaches.html": {
+    "patterns": [
+      "carousel",
+      "arrowScroll"
+    ],
+    "classes": [
+      "archiveDouble__single carousel__slide -big",
+      "carousel__img",
+      "carousel__paralax",
+      "carousel__paralaxInner is-inview",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt",
+      "archiveDouble__single carousel__slide  -small -lower",
+      "carousel__paralaxInner",
+      "carousel__imgFile lazyload"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "disclaimer.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "free-trial.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "home.html": {
+    "patterns": [
+      "carousel",
+      "swiper"
+    ],
+    "classes": [
+      "CarouselLayout__CarouselContainer-sc-42cd9723-1 htZQVD es-carousel-layout-container Carousel__StyledCarousel-sc-92af2712-1 eMIBww es-layout-carousel",
+      "CarouselLayout__CarouselWrapper-sc-42cd9723-0 ibpUvi es-carousel-layout-wrapper",
+      "Carousel__CarouselContainer-sc-e1d484fa-0 fNFWuU es-carousel-container es-carousel-layout",
+      "Carousel__CarouselOuter-sc-e1d484fa-1 jNaUQO es-carousel-outer",
+      "Carousel__CarouselArrowControlContainer-sc-e1d484fa-9 fXJUAc es-carousel-arrow-control-container es-carousel-arrow-control-container-previous",
+      "ArrowControl__ArrowControlContainer-sc-24eb390f-0 flulAE es-carousel-arrow-control es-carousel-arrow-control-left",
+      "Icon__IconContainer-sc-dcc83765-0 iLqBer es-icon-container ArrowControl__ArrowControlIcon-sc-24eb390f-1 hzNzCw es-carousel-arrow-control-icon",
+      "Carousel__CarouselInner-sc-e1d484fa-2 eMyhwL es-carousel-inner",
+      "Carousel__CarouselSwiperWrapper-sc-e1d484fa-11 Sbgnb es-carousel-swiper-wrapper",
+      "swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-autoheight swiper-watch-progress",
+      "swiper-wrapper",
+      "swiper-slide swiper-slide-visible swiper-slide-active",
+      "CarouselItem__CarouselItemContainer-sc-b0242df4-0 es-carousel-item es-carousel-layout-item",
+      "swiper-slide swiper-slide-visible swiper-slide-next",
+      "swiper-slide swiper-slide-visible",
+      "swiper-slide",
+      "Carousel__CarouselArrowControlContainer-sc-e1d484fa-9 kgDoCv es-carousel-arrow-control-container es-carousel-arrow-control-container-next",
+      "ArrowControl__ArrowControlContainer-sc-24eb390f-0 flulAE es-carousel-arrow-control es-carousel-arrow-control-right"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "join-now.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "pricing.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "privacy-policy.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-adaptable.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "vjs-text-track-display",
+      "vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal",
+      "vjs-progress-holder vjs-slider vjs-slider-horizontal",
+      "vjs-play-progress vjs-slider-bar",
+      "vjs-menu-item vjs-texttrack-settings",
+      "vjs-modal-dialog vjs-hidden  vjs-text-track-settings",
+      "vjs-track-settings-colors",
+      "vjs-fg-color vjs-track-setting",
+      "vjs-bg-color vjs-track-setting",
+      "vjs-window-color vjs-track-setting",
+      "vjs-track-settings-font",
+      "vjs-font-percent vjs-track-setting",
+      "vjs-edge-style vjs-track-setting",
+      "vjs-font-family vjs-track-setting",
+      "vjs-track-settings-controls",
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG lazyloaded",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "carousel spacer-v",
+      "carousel__holder slick-initialized slick-slider slick-dotted",
+      "slick-track",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt",
+      "carousel__nav flex-jc",
+      "carousel__prev slick-arrow",
+      "carousel__next slick-arrow"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-digital-coaching.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG lazyloaded",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "archiveDouble__single carousel__slide -big",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-essentials.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "vjs-text-track-display",
+      "vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal",
+      "vjs-progress-holder vjs-slider vjs-slider-horizontal",
+      "vjs-play-progress vjs-slider-bar",
+      "vjs-menu-item vjs-texttrack-settings",
+      "vjs-modal-dialog vjs-hidden  vjs-text-track-settings",
+      "vjs-track-settings-colors",
+      "vjs-fg-color vjs-track-setting",
+      "vjs-bg-color vjs-track-setting",
+      "vjs-window-color vjs-track-setting",
+      "vjs-track-settings-font",
+      "vjs-font-percent vjs-track-setting",
+      "vjs-edge-style vjs-track-setting",
+      "vjs-font-family vjs-track-setting",
+      "vjs-track-settings-controls",
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG lazyload",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "carousel spacer-v",
+      "carousel__holder",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyload",
+      "carousel__txt"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-fundamentals.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "vjs-text-track-display",
+      "vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal",
+      "vjs-progress-holder vjs-slider vjs-slider-horizontal",
+      "vjs-play-progress vjs-slider-bar",
+      "vjs-modal-dialog vjs-hidden  vjs-text-track-settings",
+      "vjs-track-settings-colors",
+      "vjs-fg-color vjs-track-setting",
+      "vjs-bg-color vjs-track-setting",
+      "vjs-window-color vjs-track-setting",
+      "vjs-track-settings-font",
+      "vjs-font-percent vjs-track-setting",
+      "vjs-edge-style vjs-track-setting",
+      "vjs-font-family vjs-track-setting",
+      "vjs-track-settings-controls",
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG -active lazyloaded",
+      "dragSlider__navSVG lazyloaded",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "carousel spacer-v",
+      "carousel__holder",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt",
+      "carousel__nav flex-jc"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-go2day.html": {
+    "patterns": [
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-go2gether.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "vjs-text-track-display",
+      "vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal",
+      "vjs-progress-holder vjs-slider vjs-slider-horizontal",
+      "vjs-play-progress vjs-slider-bar",
+      "vjs-menu-item vjs-texttrack-settings",
+      "vjs-modal-dialog vjs-hidden  vjs-text-track-settings",
+      "vjs-track-settings-colors",
+      "vjs-fg-color vjs-track-setting",
+      "vjs-bg-color vjs-track-setting",
+      "vjs-window-color vjs-track-setting",
+      "vjs-track-settings-font",
+      "vjs-font-percent vjs-track-setting",
+      "vjs-edge-style vjs-track-setting",
+      "vjs-font-family vjs-track-setting",
+      "vjs-track-settings-controls",
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG lazyloaded",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "carousel spacer-v",
+      "carousel__holder slick-initialized slick-slider slick-dotted",
+      "slick-track",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt",
+      "carousel__nav flex-jc",
+      "carousel__prev slick-arrow",
+      "carousel__next slick-arrow"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-healthy-ageing.html": {
+    "patterns": [
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs-hyrox.html": {
+    "patterns": [
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "programs.html": {
+    "patterns": [
+      "slider",
+      "archiveSlider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "archiveSlider",
+      "archiveSlider__slide margin-m spacer spacer-nt",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-2",
+      "archiveSlider__slide margin-m spacer",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-3",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-4",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-5",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-6",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-7",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-8",
+      "imageText__imgholder -big archiveSlider__slideImage archiveSlider__slide-9"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "stories.html": {
+    "patterns": [
+      "carousel",
+      "arrowScroll"
+    ],
+    "classes": [
+      "archiveDouble__single carousel__slide -big",
+      "carousel__img",
+      "carousel__paralax",
+      "carousel__paralaxInner is-inview",
+      "carousel__imgFile lazyloaded",
+      "carousel__txt",
+      "archiveDouble__single carousel__slide  -small -lower",
+      "carousel__paralaxInner",
+      "carousel__imgFile lazyload"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-beste-glute-oefeningen.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-hoe-begin-je-weer-met-sporten-na-een-lange-pauze.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-hoe-blijf-je-gezond-met-een-drukke-baan.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-ik-durf-niet-naar-de-sportschool-hoe-kom-je-over-die-drempel-heen.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-is-krachttraining-voor-kinderen-slecht-voor-de-groei.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-sportschool-intake.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-teambuilding-in-leeuwarden-ontdek-de-kracht-van-samen-sporten-bij-go180.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-waarom-doet-een-dieetcoach-meer-dan-een-voedingsschema-maken.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-waarom-stop-ik-steeds-met-sporten.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "story-wat-zijn-de-kenmerken-van-een-gezonde-leefstijl.html": {
+    "patterns": [
+      "arrowScroll"
+    ],
+    "classes": [],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  },
+  "we-are-go180.html": {
+    "patterns": [
+      "carousel",
+      "slider",
+      "arrowScroll"
+    ],
+    "classes": [
+      "dragSlider spacer-v",
+      "dragSlider__nav flex-c",
+      "dragSlider__navPoint dragSlider__navPointFirst",
+      "dragSlider__navPointInner",
+      "dragSlider__navPoint -next",
+      "dragSlider__navPoint",
+      "dragSlider__navActive circle -outline",
+      "dragSlider__navSVG -active lazyload",
+      "dragSlider__navSVG lazyload",
+      "dragSlider__viewer",
+      "dragSlider__slide spacer-h -active",
+      "dragSlider__slide spacer-h",
+      "carousel spacer-v",
+      "carousel__holder",
+      "carousel__slide",
+      "carousel__img -overflow",
+      "carousel__imgFile lazyload",
+      "carousel__txt",
+      "carousel__nav flex-jc"
+    ],
+    "sampleNav": [
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">",
+      "<span class=\"menu__arrow js-menu-arrow\">"
+    ]
+  }
+}

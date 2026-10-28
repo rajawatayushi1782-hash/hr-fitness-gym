@@ -1,0 +1,338 @@
+[
+  {
+    "vp": "desktop_1440x900",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "desktop_1440x900",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "laptop_1280x800",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "tablet_768x1024",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_430x932",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_390x844",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/club-leeuwarden/",
+    "total": 14,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/coaches/",
+    "total": 7,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/programs/",
+    "total": 9,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/pricing/",
+    "total": 2,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/contact/",
+    "total": 0,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/stories/beste-glute-oefeningen/",
+    "total": 3,
+    "broken": 0,
+    "failedReqs": 0
+  },
+  {
+    "vp": "mobile_375x812",
+    "route": "/free-trial/",
+    "total": 6,
+    "broken": 0,
+    "failedReqs": 0
+  }
+]

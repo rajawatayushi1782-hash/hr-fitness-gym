@@ -1,0 +1,298 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/we-are-go180/",
+    "status": 200,
+    "title": "About Us | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "About HR Fitness Club",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/clubs/leeuwarden/",
+    "status": 200,
+    "title": "Thatipur Club | HR Fitness Club - Suresh Nagar Chauraha, Gwalior",
+    "h1": "Thatipur, Gwalior",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/",
+    "status": 200,
+    "title": "Training Programs | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Programs",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/essentials/",
+    "status": 200,
+    "title": "Essentials Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Essentials",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/fundamentals/",
+    "status": 200,
+    "title": "Fundamentals Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Fundamentals",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/go2gether/",
+    "status": 200,
+    "title": "Go2gether Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "GO2Gether",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/go2day/",
+    "status": 200,
+    "title": "Go2day Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "GO2day",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/hyrox/",
+    "status": 200,
+    "title": "Hyrox Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "HYROX",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/healthy-ageing/",
+    "status": 200,
+    "title": "Healthy ageing Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Healthy Ageing",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/adaptable/",
+    "status": 200,
+    "title": "Adaptable Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Adaptable",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/programs/digital-coaching/",
+    "status": 200,
+    "title": "Digital coaching Program | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Digital coaching",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/",
+    "status": 200,
+    "title": "Trainers & Coaches | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Trainers & Coaches",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/hielke-van-der-lei/",
+    "status": 200,
+    "title": "Hielke van der Lei | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Hielke van der Lei",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/arjon-van-der-wal/",
+    "status": 200,
+    "title": "Arjon van der Wal | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Arjon van der Wal",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/annick-douma/",
+    "status": 200,
+    "title": "Annick Douma | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Annick Douma",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/appie-kooistra/",
+    "status": 200,
+    "title": "Appie Kooistra | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Appie Kooistra",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/hielke-feenstra/",
+    "status": 200,
+    "title": "Hielke Feenstra | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Hielke Feenstra",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/coaches/thomas-kramer/",
+    "status": 200,
+    "title": "Thomas Kramer | Fitness Trainer - HR Fitness Club, Thatipur",
+    "h1": "Thomas Kramer",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/pricing/",
+    "status": 200,
+    "title": "Membership & Plans | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Pricing",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/stories/",
+    "status": 200,
+    "title": "Stories & Fitness Insights | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Stories & Fitness Insights",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/wat-zijn-de-kenmerken-van-een-gezonde-leefstijl/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/waarom-doet-een-dieetcoach-meer-dan-een-voedingsschema-maken/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/is-krachttraining-voor-kinderen-slecht-voor-de-groei/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/sportschool-intake/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/ik-durf-niet-naar-de-sportschool-hoe-kom-je-over-die-drempel-heen/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/waarom-stop-ik-steeds-met-sporten/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/beste-glute-oefeningen/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/hoe-begin-je-weer-met-sporten-na-een-lange-pauze/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/teambuilding-in-leeuwarden-ontdek-de-kracht-van-samen-sporten-bij-go180/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/story/hoe-blijf-je-gezond-met-een-drukke-baan/",
+    "status": 200,
+    "title": "HR Fitness Club | Best Gym and Fitness Centre in Thatipur, Gwalior",
+    "h1": "Build Your Tomorrow",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/free-trial/",
+    "status": 200,
+    "title": "Free Trial & Gym Visit | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Request a Free Trial / Gym Visit",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/join-now/",
+    "status": 200,
+    "title": "Join Now | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Join HR Fitness Club",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/contact/",
+    "status": 200,
+    "title": "Contact Us | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Contact Us",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/algemene-voorwaarden/",
+    "status": 200,
+    "title": "Terms & Conditions | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Terms & Conditions",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/privacy-policy/",
+    "status": 200,
+    "title": "Privacy Policy | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Privacy Policy",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  },
+  {
+    "route": "/disclaimer/",
+    "status": 200,
+    "title": "Disclaimer | HR Fitness Club - Thatipur, Gwalior",
+    "h1": "Disclaimer",
+    "heroMatch": true,
+    "corrupted": "NONE"
+  }
+]

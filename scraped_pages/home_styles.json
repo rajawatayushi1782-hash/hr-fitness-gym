@@ -1,0 +1,35 @@
+{
+  "body": {
+    "fontFamily": "Gilroy, Helvetica, Verdana, sans-serif",
+    "color": "rgb(225, 225, 225)",
+    "backgroundColor": "rgb(13, 30, 37)",
+    "fontSize": "19px"
+  },
+  "h1": {
+    "fontFamily": "Gilroy, Helvetica, Verdana, sans-serif",
+    "fontSize": "75px",
+    "fontWeight": "700",
+    "lineHeight": "75px",
+    "color": "rgb(225, 225, 225)"
+  },
+  "h2": null,
+  "p": {
+    "fontFamily": "Gilroy, Helvetica, Verdana, sans-serif",
+    "fontSize": "19px",
+    "lineHeight": "34.2px",
+    "color": "rgb(225, 225, 225)"
+  },
+  "header": {
+    "height": "110px",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "position": "fixed"
+  },
+  "button": {
+    "fontFamily": "Gilroy, Helvetica, Verdana, sans-serif",
+    "fontSize": "18px",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(13, 30, 37)",
+    "borderRadius": "50px",
+    "padding": "0px 28.8px"
+  }
+}

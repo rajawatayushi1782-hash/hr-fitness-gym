@@ -1,0 +1,41 @@
+const fs = require('fs');
+const path = require('path');
+
+const pagesDir = path.join(__dirname, 'public', 'pages');
+const files = fs.readdirSync(pagesDir).filter(f => f.endsWith('.html'));
+
+const brokenMap = {
+  'GO180-78-1920x648.jpg.webp': 'GO180-70-1920x648.jpg.webp',
+  'GO180-79-790x860.jpg.webp': 'GO180-79KR1920x1080-790x860.webp',
+  'AronWeidenaar_HR-53-1920x648.jpg.webp': 'GO180-232LR1920x1080-1920x648.webp',
+  'AronWeidenaar_HR-91-1920x648.jpg.webp': 'AronWeidenaar_HR-92-1920x648.jpg.webp',
+  'AronWeidenaar_HR-49-scaled-e1776779429601.jpg.webp': 'AronWeidenaar_HR-52-scaled-e1776779399985.jpg.webp',
+  'AronWeidenaar_HR-74-1920x648.jpg.webp': 'GO180-112-1920x648.jpg.webp%Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹LÍ\ØØ[YYLMÍÍÍÎMMKšœËÙXœ	Îˆ	Ð\›Û•ÙZY[˜X\—Ò‹LÌ‹LM^NLšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹MKLNLŒšœËÙXœ	Îˆ	Ð\›Û•ÙZY[˜X\—Ò‹MNLNLŒšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹MÍË\ØØ[YYLMÍÍÍÎNLNMLËšœËÙXœ	Îˆ	Ð\›Û•ÙZY[˜X\—Ò‹MÌË\ØØ[YYLMÍÍÍÎLLMÎMËšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹LÌLNLŒšœËÙXœ	Îˆ	ÑÓÌNLŽLNLŒšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹MK\ØØ[YYLMÍÍÍÎMÍLKšœËÙXœ	Îˆ	Ð\›Û•ÙZY[˜X\—Ò‹LN\ØØ[YYLMÍÍÍÎMŒÌNšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹MË\ØØ[YYLMÍÍÍÎMÌMŽM‹šœËÙXœ	Îˆ	Ð\›Û•ÙZY[˜X\—Ò‹MËMÎLŒšœËÙXœ	Ëˆ	Ð\›Û•ÙZY[˜X\—Ò‹MÎLNLŒšœËÙXœ	Îˆ	ÑÓÌNMÌ‹LNLŒšœËÙXœ	rÀ¢t&öåvV–FVæ%ô…"ÓCB×66ÆVBÖSsscss“CSCs3’æ§rçvV's¢t&öåvV–FVæ%ô…"ÓCÓCƒWƒ““æ§rçvV'rÀ¢t&öåvV–FVæ%ô…"ÓƒR×66ÆVBÖSsscssƒ“CCc’æ§rçvV's¢t&öåvV–FVæ%ô…"Ós‚×66ÆVBÖSsscssƒ“ƒS“sRæ§rçvV'rÀ¢t&öåvV–FVæ%ô…"ÓC"×66ÆVBÖSsscss“Cc#ƒ2æ§rçvV's¢t&öåvV–FVæ%ô…"Ó#‚×66ÆVBÖSsscss“Ssƒ“CRæ§rçvV'\°(€€É½¹]•¥‘•¹……É}!H´Èà´ÄäÈÁàØÐà¹©Áœ¹Ý•‰Àœè€É½¹]•¥‘•¹……É}!H´äÈ´ÄäÈÁàØÐà¹©Áœ¹Ý•‰Àœ°(€€É½¹]•¥‘•¹……É}!H´ÔÔµÍ…±•µ”ÄÜÜØÜÜäÌÜäÌØØ¹©Áœ¹Ý•‰Àœè€<ÄàÀ´ÄÀÔ´ÜäÁààØÀ¹©Áœ¹Ý•‰À—,
+  'AronWeidenaar_HR-71-1920x648.jpg.webp': 'GO180-79-1920x648.jpg.webp',
+  'AronWeidenaar_HR-58-scaled-e1776779329184.jpg.webp': 'DSCF7905-scaled-e1785248816279.jpg.webp',
+  'AronWeidenaar_HR-73-1920x648.jpg.webp': 'AronWeidenaar_HR-68-1920x648.jpg.webp'
+};
+
+const altTranslations = {
+  'Sportschoolangst': 'Overcoming Gym Anxiety at HR Fitness Club',
+  'Ik durf niet naar de sportschool': 'Overcoming Gym Hesitation and Building Confidence',
+  'eten voor het sporten': 'Pre-Workout Nutrition and Healthy Fueling',
+  'Tips gezond afvallen': 'Healthy and Sustainable Weight Loss Guidance',
+  'Fitness Leeuwarden': 'Fitness Training and Conditioning at HR Fitness Club',
+  'Personal trainer Leeuwarden': 'Personal Training and Coaching at HR Fitness Club',
+  'Gym Leeuwarden': 'HR Fitness Club Thatipur Modern Gym Facility',
+  'Personal training Leeuwarden': 'Dedicated One-on-One Personal Fitness Coaching',
+  'Sportschool Leeuwarden': 'HR Fitness Club Thatipur Gwalior',
+  'Sportschool in Leeuwarden': 'HR Fitness Club Modern Fitness Facility in Thatipur',
+  'Sporten en mentale gezondheid': 'Exercise, Vitality, and Mental Wellbeing',
+  'Gezond afvallen tips': 'Evidence-Based Healthy Weight Loss Coaching',
+  'krachtoefeningen die niet in jouw schema mogen ontbreken': 'Essential Strength Exercises for Full Body Power',
+  'Meer vitaliteit op de werkvloer': 'Corporate Vitality and Workplace Wellness',
+  'gids voor het maken van je eigen voedingsschema': 'Comprehensive Nutrition and Meal Planning Guide',
+  'Effectieve krachttraining in de gym: Een complete gids': 'Effective Strength Training in the Gym: Complete Guide',
+  'beste eten voor het sporten': 'Best Foods for Optimal Workout Energy and Recovery',
+  'Wat zijn de kenmerken van een gezonde leefstijl': 'Key Characteristics of a Sustainable Healthy Lifestyle',
+  'Vitaliteit werkvloer': 'Workplace Vitality and Employee Fitness',
+  'Gezond eten drukke levensstijl': 'Healthy Eating Habits for Busy Professionals',
+  'Indoor sporten Leeuwarden': 'Indoor Fitness and Group Training at HR Fitness Club',
+  'HYROXVWWv&FVâs¢t…•$õF†ÆWF–26öæF—F–öæ–ærbgVæ7F–öæÂVæGW&æ6RrÀ¢t…•$õ‚G&–æ–æw6W76–W2–âÆVWWv&FVâs¢t…•$õ‚gVæ7F–öæÂf—FæW726W76–öç2B…"f—FæW726ÇV"rÀ¢uv&öÒFöWBVVâF–VWF6ö6‚ÖVW"FâVVâföVF–æw766†VÖÖ¶Vâs¢uv‡’çWG&—F–öâ6ö6‚FöW2Ö÷&RF†â§W7BÖVÂÆç2rÀ¢t·&6‡GG&–æ–ærfö÷"¶–æFW&Vâs¢u–÷WF‚7G&VæwF‚G&–æ–ærb6fRÖ÷F÷"FWfVÆ÷ÖVçBrÀ¢u7÷'G66†ööÂ–çF¶Rs¢t6ö×&V†Vç6—fRf—FæW726ÇV"–çF¶Rb76W76ÖVçBrÀ¢t&W7FRvÇWFRöVfVæ–ævVâs¢tVffV7F—fRvÇWFRW†W&6—6W2f÷"7G&VæwF‚æB7F&–Æ—G’rÀ¢uFVÖ'V–ÆF–ærÆVWWv&FVâs¢uFVÒ'V–ÆF–æræBw&÷Wf—FæW72B…"f—FæW726ÇV"rÀ¢t†öR&Æ–¦b¦RvW¦öæBÖWBVVâG'V¶¶R&ãòs¢t†÷rFòÖ–çF–â÷F–ÖÂ†VÇF‚v—F‚FVÖæF–ær6&VW"rÀ¢t†öR&Æ–¦f¦RvW¦öæBÖWBVVâG'V¶¶R&âs¢tÖ–çF–æ–ærf—FæW72æB†VÇF‚v—F‚'W7’¦ö"rÀ¢t–²GW&bæ–WBæ"FR7÷'G66†ööÃ¢†öR¶öÒ¦R÷fW"F–RG&V×VÂ†VVãòs¢t÷fW&6öÖ–ærw–Ò†W6—FF–öã¢&7F–6Â7FW2Fòw–Ò6öæf–FVæ6RrÀ¢t–çF¶R7÷'G66†ööÂs¢uW'6öæÆ—¦VBw–Ò–çF¶RæBÖ÷fVÖVçBæÇ—6—2rÀ¢u7÷'G66†ööÂ–çF¶Rf–tóƒs¢t6ö×&V†Vç6—fRf—FæW726öç7VÇFF–öâB…"f—FæW726ÇV"rÀ¢uFVÖ'V–ÆF–ær–âÆVWWv&FVâs¢t6÷'÷&FRFVÒf—FæW72b6öÖ×Væ—G’G&–æ–ær–âF†F—W"rÀ¢vF–VWF6ö6‚ÆVWWv&FVâs¢uW'6öæÆ—¦VBF–WB6ö6†–ærB…"f—FæW726ÇV"rÀ¢tvW¦öæFRÆVVg7F–¦Â¶VæÖW&¶Vâs¢t6÷&R–ÆÆ'2öb&Ææ6VB†VÇF‡’Æ–fW7G–ÆRrÀ¢tvW¦öæFRÆVVg7F–¦Âs¢t†VÇF‡’æB7F—fRÆ–fW7G–ÆRwV–Fæ6RrÀ¢uvB¦–¦âFR&W7FRvÇWFRöVfVæ–ævVâfö÷"7FWf–vRÂ7FW&¶R&–Ç7–W&Vãòs¢uF÷vÇWFRG&–æ–ærÖ÷fVÖVçG2f÷"÷vW"æB÷7GW&Rp§Ó° ¦ÆWBÖöF–f–VD6÷VçBÒ° ¦f÷"†6öç7Bf–ÆRöbf–ÆW2’°¢ÆWB6öçFVçBÒg2ç&VDf–ÆU7–æ2‡F‚æ¦ö–â‡vW4F—"Âf–ÆR’ÂwWFc‚r“°¢ÆWB6†ævVBÒfÇ6S° ¢f÷"†6öç7B¶öÆE7&2ÂæWu7&5Òöbö&¦V7BæVçG&–W2†'&ö¶VäÖ’’°¢–b†6öçFVçBæ–æFW„öb†öÆE7&2’ÓÒÓ’°¢6öçFVçBÒ6öçFVçBç7Æ—B†öÆE7&2¹©½¥¸¡¹•ÝMÉŒ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€ô((€™½È€¡½¹ÍÐm‘ÕÑ °•¹t½˜=‰©•Ð¹•¹ÑÉ¥•Ì¡…±ÑQÉ…¹Í±…Ñ¥½¹Ì¤¤ì(€€€½¹ÍÐ‘½Õ‰±•EÕ½Ñ•€ô€…±Ðôˆœ€¬‘ÕÑ €¬€œˆœì(€€€½¹ÍÐÍ¥¹±•EÕ½Ñ•€ô€‰…±Ðôœˆ€¬‘ÕÑ €¬€ˆœˆì(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹‘•á=˜¡‘½Õ‰±•EÕ½Ñ•¤€„ôô€´Ä¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹ÍÁ±¥Ð¡‘½Õ‰±•EÕ½Ñ•¤¹©½¥¸ …±Ðôˆœ€¬•¹œ€¬€œˆœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹‘•á=˜¡Í¥¹±•EÕ½Ñ•¤€„ôô€´Ä¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹ÍÁ±¥Ð¡Í¥¹±•EÕ½Ñ•¤¹©½¥¸ …±Ðôˆœ€¬•¹œ€¬€œˆœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€ô((€¥˜€¡™¥±”€ôôô€±Õˆµ±••ÕÝ…É‘•¸¹¡Ñµ°œ¤ì(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì œ½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´ÐÀµÍ…±•µ”ÄÜÜØÜÜäÐÜÔÐÀÄ¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” ¤½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´ÐÀµÍ…±•µ”ÄÜÜØÜÜäÐÜÔÐÀÄ¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½Ù•É¥™¥•‘}‰ÕÍ¥¹•ÍÌ½©‘}¡É}™¥Ñ¹•ÍÍ}™……‘”¹©Áœœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì œ½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´µÍ…±•µ”ÄÜÜØÜÜäàÄÄäÀà¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” œ½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´µÍ…±•µ”ÄÜÜØÜÜäàÄÄäÀà¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½Ù•É¥™¥•‘}‰ÕÍ¥¹•ÍÌ½©‘}¡É}™¥Ñ¹•ÍÍ}¥¹Ñ•É¥½É|Ä¹©Áœœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì œ½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´ØàµÍ…±•µ”ÄÜÜØÜÜäÈØàÐÄÌ¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” ¤½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´ØàµÍ…±•µ”ÄÜÜØÜÜäÈØàÐÄÌ¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½Ù•É¥™¥•‘}‰ÕÍ¥¹•ÍÌ½©‘}¡É}™¥Ñ¹•ÍÍ}¥¹Ñ•É¥½É|È¹©Áœœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì ¤½¥µ…•Ì½<ÄàÀ´ÄÄÈ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” œ½¥µ…•Ì½<ÄàÀ´ÄÄÈ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½Ù•É¥™¥•‘}‰ÕÍ¥¹•ÍÌ½©‘}¡É}™¥Ñ¹•ÍÍ}¥¹Ñ•É¥½É|Ì¹©Áœœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì œ½¥µ…•Ì½<ÄàÀ´ÄÈØ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” œ½¥µ…•Ì½<ÄàÀ´ÄÈØ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½<ÄàÀ´ÄÜÙ1IDäÈÁàÄÀàÀ´ÜäÁààØÀ¹Ý•‰Àœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€€€¥˜€¡½¹Ñ•¹Ð¹¥¹±Õ‘•Ì œ½¥µ…•Ì½<ÄàÀ´ÜÈ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ¤¤ì(€€€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” œ½¥µ…•Ì½<ÄàÀ´ÜÈ´ÜØÁàääÀ¹©Áœ¹Ý•‰Àœ°€œ½¥µ…•Ì½É½¹]•¥‘•¹……É}!H´àÄ´ÜäÁààØÀ¹©Áœ¹Ý•‰Àœ¤ì(€€€€€¡…¹•€ôÑÉÕ”ì(€€€ô(€ô((€¥˜€¡™¥±”€ôôô€‘¥Í±…¥µ•È¹¡Ñµ°œñð™¥±”€ôôô€ÁÉ¥Ù…äµÁ½±¥ä¹¡Ñµ°œ¤ì(€€€½¹ÍÐ½É¥1•¸€ô½¹Ñ•¹Ð¹±•¹Ñ ì(€€€½¹Ñ•¹Ð€ô½¹Ñ•¹Ð¹É•Á±…” ¼ñ¥µmxùt©ÍÉŒõlˆuqÌ©lˆumxùt¨ø½¤°€œœ¤ì(€€€¥˜€¡½¹Ñ•¹Ð¹±•¹Ñ €„ôô½É¥1•¸¤¡…¹•€ôÑÉÕ”ì(€ô((€¥˜€¡¡…¹•¤ì(€€€™Ì¹ÝÉ¥Ñ•¥±•Må¹Œ¡Á…Ñ ¹©½¥¸¡Á…•Í¥È°™¥±”¤°½¹Ñ•¹Ð°€ÕÑ˜àœ¤ì(€€€µ½‘¥™¥•‘½Õ¹Ð¬¬ì(€€€½¹Í½±”¹±½œ UÁ‘…Ñ•èœ°™¥±”¤ì(€ô)ô()½¹Í½±”¹±½œ Q½Ñ…°Á…•ÌÍÕ•ÍÍ™Õ±±äÕÁ‘…Ñ•èœ°µ½‘¥™¥•‘½Õ¹Ð¤ì(

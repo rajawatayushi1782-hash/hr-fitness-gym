@@ -1,0 +1,424 @@
+{
+  "techStackDetails": {
+    "scripts": [
+      {
+        "id": "",
+        "src": "https://www.google-analytics.com/analytics.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://connect.facebook.net/signals/config/503452666940004?v=2.9.427&r=stable&domain=go180.nl&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573546734b619e44d384f&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C340%2C362%2C248%2C237%2C70%2C238%2C236%2C365%2C356%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://connect.facebook.net/en_US/fbevents.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://cdn.mouseflow.com/projects/e8121ba8-a533-4fc2-8729-05ddfa54a8f4.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://www.googletagmanager.com/gtag/js?id=G-4Z69XK5TPH&cx=c&gtm=4e6al1",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "www-widgetapi-script",
+        "src": "https://www.youtube.com/s/player/cbcfbf2f/www-widgetapi.vflset/www-widgetapi.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__en.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://www.youtube.com/iframe_api",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://www.googletagmanager.com/gtm.js?id=GTM-TP9QLFF",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar gform;gform||(document.addEventListener(\"gform_main_scripts_loaded\",function(){gform.scriptsLoaded=!0}),window.addEventListener(\"DOMContentLoaded"
+      },
+      {
+        "id": "",
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/go180.nl\\/\",\"url\":\"https:\\/\\/go180.nl\\/\",\"name\":\"Samen naar een gezon"
+      },
+      {
+        "id": "jquery-core-js",
+        "src": "https://go180.nl/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_json-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/jquery.json.min.js?ver=2.8.18",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_gravityforms-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar gf_global = {\"gf_currency_config\":{\"name\":\"Amerikaanse dollar\",\"symbol_left\":\"$\",\"symbol_right\":\"\",\"symbol_padding\":\"\",\"thousand_separator\":\",\",\""
+      },
+      {
+        "id": "gform_gravityforms-js-before",
+        "src": "",
+        "isInline": true,
+        "snippet": "\n\n//# sourceURL=gform_gravityforms-js-before\n"
+      },
+      {
+        "id": "gform_gravityforms-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/gravityforms.min.js?ver=2.8.18",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_conditional_logic-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar gf_legacy = {\"is_legacy\":\"1\"};\n//# sourceURL=gform_conditional_logic-js-extra\n"
+      },
+      {
+        "id": "gform_conditional_logic-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/conditional_logic.min.js?ver=2.8.18",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_recaptcha-js",
+        "src": "https://www.google.com/recaptcha/api.js?hl=en&&ver=7.1.3#038;render=explicit",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_gravityforms_utils-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/utils.min.js?ver=50c7bea9c2320e16728e44ae9fde5f26",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement"
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "\n\t\t\tdocument.documentElement.className = document.documentElement.className.replace('no-js', 'js');\n\t\t"
+      },
+      {
+        "id": "",
+        "src": "https://universe-static.elfsightcdn.com/app-releases/google-reviews/stable/v3.56.2/2f69101c7271c63e8a639ac1d86a2640f8e43eee/widget/googleReviews.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "\n{\"prefetch\":[{\"source\":\"document\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"not\":{\"href_matches\":[\"/wp/wp-*.php\",\"/wp/wp-admin/*\",\"/app/uploads/*\",\"/ap"
+      },
+      {
+        "id": "",
+        "src": "https://apps.elfsight.com/p/platform.js",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nwindow.onload = () => {\n  let footer = document.querySelector('.footer');\n  let elgsightReviews = document.createElement('div');\n  elgsightReviews.se"
+      },
+      {
+        "id": "",
+        "src": "https://go180.activehosted.com/f/embed.php?id=1",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "smush-nextgen-fallback-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar wp_smushit_nextgen_data = {\"mode\":\"webp\"};\n//# sourceURL=smush-nextgen-fallback-js-extra\n"
+      },
+      {
+        "id": "smush-nextgen-fallback-js",
+        "src": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-nextgen-fallback.min.js?ver=4.3.4",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "main-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar ajax = {\"url\":\"https://go180.nl/wp/wp-admin/admin-ajax.php\"};\n//# sourceURL=main-js-extra\n"
+      },
+      {
+        "id": "main-js",
+        "src": "https://go180.nl/app/themes/go180/assets/js/main.js?ver=5.1.3",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "wp-dom-ready-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "wp-hooks-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "wp-i18n-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "wp-i18n-js-after",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nwp.i18n.setLocaleData( { 'text direction\\u0004ltr': [ 'ltr' ] } );\n//# sourceURL=wp-i18n-js-after\n"
+      },
+      {
+        "id": "wp-a11y-js-translations",
+        "src": "",
+        "isInline": true,
+        "snippet": "\n( function( domain, translations ) {\n\tvar localeData = translations.locale_data[ domain ] || translations.locale_data.messages;\n\tlocaleData[\"\"].domai"
+      },
+      {
+        "id": "wp-a11y-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_gravityforms_theme_vendors-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=54e7080aa7a02c83aa61fae430b9d869",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "gform_gravityforms_theme-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar gform_theme_config = {\"common\":{\"form\":{\"honeypot\":{\"version_hash\":\"c34db87119544ab4e2de74acbf8a65f4\"}}},\"hmr_dev\":\"\",\"public_path\":\"https://go18"
+      },
+      {
+        "id": "gform_gravityforms_theme-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=bab19fd84843dabc070e73326d787910",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "jquery-ui-core-js-before",
+        "src": "",
+        "isInline": true,
+        "snippet": "\njQuery.uiBackCompat = true;\n//# sourceURL=jquery-ui-core-js-before\n"
+      },
+      {
+        "id": "jquery-ui-core-js",
+        "src": "https://go180.nl/wp/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "popup-maker-site-js-extra",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar pum_vars = {\"version\":\"1.25.0\",\"pm_dir_url\":\"https://go180.nl/app/plugins/popup-maker/\",\"ajaxurl\":\"https://go180.nl/wp/wp-admin/admin-ajax.php\",\""
+      },
+      {
+        "id": "popup-maker-site-js",
+        "src": "https://go180.nl/app/plugins/popup-maker/dist/assets/site.js?defer&ver=1.25.0",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "smush-lazy-load-js-before",
+        "src": "",
+        "isInline": true,
+        "snippet": "\nvar smushLazyLoadOptions = {\"autoResizingEnabled\":false,\"autoResizeOptions\":{\"precision\":5,\"skipAutoWidth\":true,\"cdnBaseURL\":\"\"}};\n//# sourceURL=smus"
+      },
+      {
+        "id": "smush-lazy-load-js",
+        "src": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=4.3.4",
+        "isInline": false,
+        "snippet": ""
+      },
+      {
+        "id": "",
+        "src": "",
+        "isInline": true,
+        "snippet": "var GTMSessionDuration=function(){this.settings={minuteMarkers:[1,2,3,5,10,30],sessionExpires:30};setInterval(this.checkDuration.bind(this),1E3)};GTMS"
+      }
+    ],
+    "stylesheets": [
+      "https://go180.nl/app/themes/go180/assets/css/main.css?ver=5.1.3",
+      "https://go180.nl/app/plugins/popup-maker/dist/assets/site.css?ver=1.25.0"
+    ],
+    "globals": {
+      "hasJQuery": true,
+      "jQueryVersion": "3.7.1",
+      "hasGSAP": false,
+      "hasScrollTrigger": false,
+      "hasLocomotive": true,
+      "hasBarba": false,
+      "hasSlick": true,
+      "bodyClasses": "home wp-singular page-template-default page page-id-4 wp-theme-go180",
+      "htmlClasses": "webp has-scroll-init has-scroll-smooth ready pum-open pum-open-overlay-disabled pum-open-fixed",
+      "dataScrollContainer": true,
+      "scrollSectionsCount": 2,
+      "dataScrollCount": 18,
+      "bulletsCount": 6,
+      "slidesCount": 6
+    },
+    "rootVariables": {
+      "--wp--preset--gradient--midnight": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+      "--vh": "9px",
+      "--wp-admin-theme-color-darker-10--rgb": "0,107,160.5",
+      "--wp-admin-theme-color-darker-20": "#005a87",
+      "--wp--preset--shadow--outlined": "6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0)",
+      "--wp--preset--shadow--natural": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+      "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+      "--wp--preset--spacing--30": "0.67rem",
+      "--wp--preset--aspect-ratio--4-3": "4/3",
+      "--wp--preset--spacing--50": "1.5rem",
+      "--wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+      "--wp--preset--aspect-ratio--16-9": "16/9",
+      "--wp--preset--spacing--70": "3.38rem",
+      "--wp-block-synced-color--rgb": "122,0,223",
+      "--wp-bound-block-color": "#7a00df",
+      "--wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+      "--wp-block-synced-color": "#7a00df",
+      "--wp--preset--gradient--electric-grass": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+      "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+      "--wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+      "--wp--preset--aspect-ratio--9-16": "9/16",
+      "--wp--preset--spacing--60": "2.25rem",
+      "--wp--preset--shadow--crisp": "6px 6px 0px rgb(0, 0, 0)",
+      "--wp--preset--shadow--deep": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+      "--wp-admin-border-width-focus": "2px",
+      "--wp-editor-canvas-background": "#ddd",
+      "--wp--preset--aspect-ratio--square": "1",
+      "--wp--preset--shadow--sharp": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+      "--wp--preset--gradient--pale-ocean": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+      "--wp--preset--spacing--80": "5.06rem",
+      "--wp-admin-theme-color-darker-20--rgb": "0,90,135",
+      "--wp--preset--spacing--40": "1rem",
+      "--wp--preset--aspect-ratio--3-4": "3/4",
+      "--wp-admin-theme-color-darker-10": "#006ba1",
+      "--wp-admin-theme-color--rgb": "0,124,186",
+      "--wp-admin-theme-color": "#007cba",
+      "--wp--preset--aspect-ratio--3-2": "3/2",
+      "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+      "--wp--preset--spacing--20": "0.44rem",
+      "--wp--preset--aspect-ratio--2-3": "2/3",
+      "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+      "--wp--preset--font-size--huge": "42px",
+      "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+      "--wp--preset--font-size--normal": "16px",
+      "--wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)"
+    },
+    "locoInfo": "Locomotive found on window"
+  },
+  "logs": [
+    {
+      "type": "warning",
+      "text": "VIDEOJS: WARN: videojs.extend is deprecated as of Video.js 7.22.0 and will be removed in Video.js 8.0.0"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "VIDEOJS: WARN: videojs.extend is deprecated as of Video.js 7.22.0 and will be removed in Video.js 8.0.0"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    },
+    {
+      "type": "warning",
+      "text": "GSAP target [object Object] not found. https://greensock.com"
+    }
+  ]
+}

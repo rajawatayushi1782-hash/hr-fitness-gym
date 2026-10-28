@@ -1,0 +1,570 @@
+{
+  "pageData": {
+    "title": "Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180",
+    "bodyClasses": "home wp-singular page-template-default page page-id-4 wp-theme-go180",
+    "htmlClasses": "webp has-scroll-init has-scroll-smooth ready pum-open pum-open-overlay-disabled pum-open-fixed",
+    "hasGSAP": false,
+    "hasScrollTrigger": false,
+    "hasLocomotiveScroll": false,
+    "hasBarba": false,
+    "hasJQuery": true,
+    "windowKeys": [
+      "scrollbars",
+      "scrollX",
+      "scrollY",
+      "onscroll",
+      "onscrollend",
+      "onwebkitanimationend",
+      "onwebkitanimationiteration",
+      "onwebkitanimationstart",
+      "onanimationcancel",
+      "onanimationend",
+      "onanimationiteration",
+      "onanimationstart",
+      "cancelAnimationFrame",
+      "requestAnimationFrame",
+      "scroll",
+      "scrollBy",
+      "scrollTo",
+      "webkitCancelAnimationFrame",
+      "webkitRequestAnimationFrame",
+      "onscrollsnapchange",
+      "onscrollsnapchanging",
+      "gsapVersions"
+    ],
+    "scripts": [
+      {
+        "id": "www-widgetapi-script",
+        "src": "https://www.youtube.com/s/player/cbcfbf2f/www-widgetapi.vflset/www-widgetapi.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://www.google-analytics.com/analytics.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://connect.facebook.net/signals/config/503452666940004?v=2.9.427&r=stable&domain=go180.nl&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573546734b619e44d384f&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C340%2C362%2C248%2C237%2C70%2C238%2C236%2C365%2C356%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://connect.facebook.net/en_US/fbevents.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://cdn.mouseflow.com/projects/e8121ba8-a533-4fc2-8729-05ddfa54a8f4.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://www.googletagmanager.com/gtag/js?id=G-4Z69XK5TPH&cx=c&gtm=4e6al1",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__en.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://www.youtube.com/iframe_api",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://www.googletagmanager.com/gtm.js?id=GTM-TP9QLFF",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "\nvar gform;gform||(document.addEventListener(\"gform_main_scripts_loaded\",function(){gform.scriptsLoaded=!0}),window.addEventListener(\"DOMContentLoaded\",function(){gform.domLoaded=!0}),gform={domLoaded"
+      },
+      {
+        "id": "",
+        "src": "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/go180.nl\\/\",\"url\":\"https:\\/\\/go180.nl\\/\",\"name\":\"Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180\",\"isPartOf\""
+      },
+      {
+        "id": "jquery-core-js",
+        "src": "https://go180.nl/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "inline": null
+      },
+      {
+        "id": "gform_json-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/jquery.json.min.js?ver=2.8.18",
+        "inline": null
+      },
+      {
+        "id": "gform_gravityforms-js-extra",
+        "src": "",
+        "inline": "\nvar gf_global = {\"gf_currency_config\":{\"name\":\"Amerikaanse dollar\",\"symbol_left\":\"$\",\"symbol_right\":\"\",\"symbol_padding\":\"\",\"thousand_separator\":\",\",\"decimal_separator\":\".\",\"decimals\":2,\"code\":\"USD\"},"
+      },
+      {
+        "id": "gform_gravityforms-js-before",
+        "src": "",
+        "inline": "\n\n//# sourceURL=gform_gravityforms-js-before\n"
+      },
+      {
+        "id": "gform_gravityforms-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/gravityforms.min.js?ver=2.8.18",
+        "inline": null
+      },
+      {
+        "id": "gform_conditional_logic-js-extra",
+        "src": "",
+        "inline": "\nvar gf_legacy = {\"is_legacy\":\"1\"};\n//# sourceURL=gform_conditional_logic-js-extra\n"
+      },
+      {
+        "id": "gform_conditional_logic-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/js/conditional_logic.min.js?ver=2.8.18",
+        "inline": null
+      },
+      {
+        "id": "gform_recaptcha-js",
+        "src": "https://www.google.com/recaptcha/api.js?hl=en&&ver=7.1.3#038;render=explicit",
+        "inline": null
+      },
+      {
+        "id": "gform_gravityforms_utils-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/utils.min.js?ver=50c7bea9c2320e16728e44ae9fde5f26",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.sr"
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "\n\t\t\tdocument.documentElement.className = document.documentElement.className.replace('no-js', 'js');\n\t\t"
+      },
+      {
+        "id": "",
+        "src": "https://universe-static.elfsightcdn.com/app-releases/google-reviews/stable/v3.56.2/2f69101c7271c63e8a639ac1d86a2640f8e43eee/widget/googleReviews.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180\",\"url\":\"https://go180.nl/\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Samen naar een gezonde"
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "\n{\"prefetch\":[{\"source\":\"document\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"not\":{\"href_matches\":[\"/wp/wp-*.php\",\"/wp/wp-admin/*\",\"/app/uploads/*\",\"/app/*\",\"/app/plugins/*\",\"/app/themes/go180/*\",\"/*\\\\?"
+      },
+      {
+        "id": "",
+        "src": "https://apps.elfsight.com/p/platform.js",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "\nwindow.onload = () => {\n  let footer = document.querySelector('.footer');\n  let elgsightReviews = document.createElement('div');\n  elgsightReviews.setAttribute('class', 'elfsight-app-c92cdafb-a9bc-4e"
+      },
+      {
+        "id": "",
+        "src": "https://go180.activehosted.com/f/embed.php?id=1",
+        "inline": null
+      },
+      {
+        "id": "smush-nextgen-fallback-js-extra",
+        "src": "",
+        "inline": "\nvar wp_smushit_nextgen_data = {\"mode\":\"webp\"};\n//# sourceURL=smush-nextgen-fallback-js-extra\n"
+      },
+      {
+        "id": "smush-nextgen-fallback-js",
+        "src": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-nextgen-fallback.min.js?ver=4.3.4",
+        "inline": null
+      },
+      {
+        "id": "main-js-extra",
+        "src": "",
+        "inline": "\nvar ajax = {\"url\":\"https://go180.nl/wp/wp-admin/admin-ajax.php\"};\n//# sourceURL=main-js-extra\n"
+      },
+      {
+        "id": "main-js",
+        "src": "https://go180.nl/app/themes/go180/assets/js/main.js?ver=5.1.3",
+        "inline": null
+      },
+      {
+        "id": "wp-dom-ready-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23",
+        "inline": null
+      },
+      {
+        "id": "wp-hooks-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255",
+        "inline": null
+      },
+      {
+        "id": "wp-i18n-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216",
+        "inline": null
+      },
+      {
+        "id": "wp-i18n-js-after",
+        "src": "",
+        "inline": "\nwp.i18n.setLocaleData( { 'text direction\\u0004ltr': [ 'ltr' ] } );\n//# sourceURL=wp-i18n-js-after\n"
+      },
+      {
+        "id": "wp-a11y-js-translations",
+        "src": "",
+        "inline": "\n( function( domain, translations ) {\n\tvar localeData = translations.locale_data[ domain ] || translations.locale_data.messages;\n\tlocaleData[\"\"].domain = domain;\n\twp.i18n.setLocaleData( localeData, do"
+      },
+      {
+        "id": "wp-a11y-js",
+        "src": "https://go180.nl/wp/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d",
+        "inline": null
+      },
+      {
+        "id": "gform_gravityforms_theme_vendors-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=54e7080aa7a02c83aa61fae430b9d869",
+        "inline": null
+      },
+      {
+        "id": "gform_gravityforms_theme-js-extra",
+        "src": "",
+        "inline": "\nvar gform_theme_config = {\"common\":{\"form\":{\"honeypot\":{\"version_hash\":\"c34db87119544ab4e2de74acbf8a65f4\"}}},\"hmr_dev\":\"\",\"public_path\":\"https://go180.nl/app/plugins/gravityforms/assets/js/dist/\"};\n/"
+      },
+      {
+        "id": "gform_gravityforms_theme-js",
+        "src": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=bab19fd84843dabc070e73326d787910",
+        "inline": null
+      },
+      {
+        "id": "jquery-ui-core-js-before",
+        "src": "",
+        "inline": "\njQuery.uiBackCompat = true;\n//# sourceURL=jquery-ui-core-js-before\n"
+      },
+      {
+        "id": "jquery-ui-core-js",
+        "src": "https://go180.nl/wp/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2",
+        "inline": null
+      },
+      {
+        "id": "popup-maker-site-js-extra",
+        "src": "",
+        "inline": "\nvar pum_vars = {\"version\":\"1.25.0\",\"pm_dir_url\":\"https://go180.nl/app/plugins/popup-maker/\",\"ajaxurl\":\"https://go180.nl/wp/wp-admin/admin-ajax.php\",\"restapi\":\"https://go180.nl/wp-json/pum/v1\",\"rest_n"
+      },
+      {
+        "id": "popup-maker-site-js",
+        "src": "https://go180.nl/app/plugins/popup-maker/dist/assets/site.js?defer&ver=1.25.0",
+        "inline": null
+      },
+      {
+        "id": "smush-lazy-load-js-before",
+        "src": "",
+        "inline": "\nvar smushLazyLoadOptions = {\"autoResizingEnabled\":false,\"autoResizeOptions\":{\"precision\":5,\"skipAutoWidth\":true,\"cdnBaseURL\":\"\"}};\n//# sourceURL=smush-lazy-load-js-before\n"
+      },
+      {
+        "id": "smush-lazy-load-js",
+        "src": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=4.3.4",
+        "inline": null
+      },
+      {
+        "id": "",
+        "src": "",
+        "inline": "var GTMSessionDuration=function(){this.settings={minuteMarkers:[1,2,3,5,10,30],sessionExpires:30};setInterval(this.checkDuration.bind(this),1E3)};GTMSessionDuration.prototype.checkDuration=function(){"
+      }
+    ],
+    "styles": [
+      "https://go180.nl/app/themes/go180/assets/css/main.css?ver=5.1.3",
+      "https://go180.nl/app/plugins/popup-maker/dist/assets/site.css?ver=1.25.0"
+    ],
+    "wipeElement": "<div class=\"wipe\" style=\"translate: none; rotate: none; scale: none; transform-origin: 0% 0%; transform: translate3d(0px, 0px, 0px) rotate(-180deg); z-index: 1000; opacity: 0;\">\n\t<div class=\"wipe_circle\" style=\"opacity: 1;\"></div>\n</div>",
+    "scrollContainer": true,
+    "dataScrollElements": 18,
+    "dataScrollSpeedElements": 0,
+    "dataScrollClassElements": 0,
+    "dataScrollSectionElements": 2,
+    "sections": []
+  },
+  "networkRequests": [
+    {
+      "url": "https://go180.nl/",
+      "resourceType": "document"
+    },
+    {
+      "url": "https://go180.nl/app/themes/go180/assets/css/main.css?ver=5.1.3",
+      "resourceType": "stylesheet"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/popup-maker/dist/assets/site.css?ver=1.25.0",
+      "resourceType": "stylesheet"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Montserrat:100",
+      "resourceType": "stylesheet"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/js/jquery.json.min.js?ver=2.8.18",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/js/gravityforms.min.js?ver=2.8.18",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/js/conditional_logic.min.js?ver=2.8.18",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api.js?hl=en&&ver=7.1.3",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/utils.min.js?ver=50c7bea9c2320e16728e44ae9fde5f26",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://apps.elfsight.com/p/platform.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.activehosted.com/f/embed.php?id=1",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-nextgen-fallback.min.js?ver=4.3.4",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/themes/go180/assets/js/main.js?ver=5.1.3",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=54e7080aa7a02c83aa61fae430b9d869",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=bab19fd84843dabc070e73326d787910",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/wp/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/popup-maker/dist/assets/site.js?defer&ver=1.25.0",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=4.3.4",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TP9QLFF",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/themes/go180/assets/fonts/Gilroy-Bold.woff2",
+      "resourceType": "font"
+    },
+    {
+      "url": "https://go180.nl/app/themes/go180/assets/fonts/Gilroy-Semibold.woff2",
+      "resourceType": "font"
+    },
+    {
+      "url": "https://static.elfsight.com/platform/platform.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.youtube.com/iframe_api",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-81-scaled-e1695809915448.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-46-scaled-e1695809932401.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-7-scaled-e1695809883842.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-scaled-e1695809865642.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-150-scaled-e1695809898674.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://go180.nl/app/smush-webp/2023/06/GO180-86-scaled-e1695809946906.jpg.webp",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__en.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-4Z69XK5TPH&cx=c&gtm=4e6al1",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://cdn.mouseflow.com/projects/e8121ba8-a533-4fc2-8729-05ddfa54a8f4.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.google-analytics.com/analytics.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://www.youtube.com/s/player/cbcfbf2f/www-widgetapi.vflset/www-widgetapi.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-4Z69XK5TPH&gtm=45je6al1v890079368za20ozb830281471zd830281471xf1&_p=1792821988872&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&cid=1810118246.1792821990&frm=0&pscdl=noapi&rcb=7&sr=1440x900&uaa=x86&uab=64&uafvl=Chromium%3B154.0.8037.98%7CGoogle%2520Chrome%3B154.0.8037.98%7CNot%2520A(Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120420415~120469145~120469153~121246026~121246034&sid=1792821990&sct=1&seg=0&dl=https%3A%2F%2Fgo180.nl%2F&dt=Samen%20naar%20een%20gezonde%20leefstijl%2C%20o.a.%20PT%2C%20fitness%20%7C%20GO180&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=3818",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-4Z69XK5TPH&cid=1810118246.1792821990&gtm=45je6al1v890079368za20ozb830281471zd830281471xf1&rcb=7&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120420415~120469145~120469153~121246026~121246034",
+      "resourceType": "ping"
+    },
+    {
+      "url": "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-4Z69XK5TPH&cid=1810118246.1792821990&gtm=45je6al1v890079368za20ozb830281471zd830281471xf1&rcb=7&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120420415~120469145~120469153~121246026~121246034&z=1380067633",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://www.google-analytics.com/j/collect?v=1&_v=j102&aip=1&a=1253273994&t=pageview&_s=1&dl=https%3A%2F%2Fgo180.nl%2F&ul=en-us&dt=Samen%20naar%20een%20gezonde%20leefstijl%2C%20o.a.%20PT%2C%20fitness%20%7C%20GO180&sr=1440x900&vp=1440x900&_u=YADAAEABAAAAACAAI~&jid=462149266&gjid=1983430091&cid=1810118246.1792821990&tid=UA-74953441-1&_gid=396794385.1792821990&_r=1&_slc=1&gtm=45He6al1n81TP9QLFFv830281471za200zd830281471xf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938466~115938469~118897920~118897930~120385422~120469145~120469153~121246026~121246034&z=678543019",
+      "resourceType": "xhr"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=3338482&time=1792821990291&li_adsId=b182e103-018f-4746-9994-643b06964b59&pageLoadId=a4151208-8699-45a9-8981-8d9d54db65b2&url=https%3A%2F%2Fgo180.nl%2F",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://connect.facebook.net/signals/config/503452666940004?v=2.9.427&r=stable&domain=go180.nl&hme=766752a074f0cb0756dd3275a46fdecbcfe3de1ab8f573546734b619e44d384f&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C274%2C273%2C272%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C324%2C325%2C326%2C323%2C340%2C362%2C248%2C237%2C70%2C238%2C236%2C365%2C356%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=3338482&time=1792821990291&li_adsId=b182e103-018f-4746-9994-643b06964b59&pageLoadId=a4151208-8699-45a9-8981-8d9d54db65b2&url=https%3A%2F%2Fgo180.nl%2F&cookiesTest=true",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D3338482%26time%3D1792821990291%26li_adsId%3Db182e103-018f-4746-9994-643b06964b59%26pageLoadId%3Da4151208-8699-45a9-8981-8d9d54db65b2%26url%3Dhttps%253A%252F%252Fgo180.nl%252F%26cookiesTest%3Dtrue%26liSync%3Dtrue",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://www.facebook.com/tr/",
+      "resourceType": "document"
+    },
+    {
+      "url": "https://www.facebook.com/tr/",
+      "resourceType": "document"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=3338482&time=1792821990291&li_adsId=b182e103-018f-4746-9994-643b06964b59&pageLoadId=a4151208-8699-45a9-8981-8d9d54db65b2&url=https%3A%2F%2Fgo180.nl%2F&cookiesTest=true&liSync=true",
+      "resourceType": "image"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://go180.nl/video/header.mp4",
+      "resourceType": "media"
+    },
+    {
+      "url": "https://go180.nl/favicon-32x32.png",
+      "resourceType": "other"
+    },
+    {
+      "url": "https://go180.nl/video/header.mp4",
+      "resourceType": "media"
+    },
+    {
+      "url": "https://core.service.elfsight.com/p/boot/?page=https%3A%2F%2Fgo180.nl%2F&w=c92cdafb-a9bc-4e62-9f4d-7183c800c11c",
+      "resourceType": "xhr"
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-4Z69XK5TPH&gtm=45je6al1v890079368za20gzb830281471zd830281471xf1&_p=1792821988872&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&cid=1810118246.1792821990&frm=0&pscdl=noapi&rcb=7&sr=1440x900&uaa=x86&uab=64&uafvl=Chromium%3B154.0.8037.98%7CGoogle%2520Chrome%3B154.0.8037.98%7CNot%2520A(Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115938466~115938468~118897920~118897930~120213116~120385423~120420415~120469145~120469153~121246026~121246034&sid=1792821990&sct=1&seg=0&dl=https%3A%2F%2Fgo180.nl%2F&dt=Samen%20naar%20een%20gezonde%20leefstijl%2C%20o.a.%20PT%2C%20fitness%20%7C%20GO180&en=scroll&epn.percent_scrolled=90&_et=35&tfd=8859",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://universe-static.elfsightcdn.com/app-releases/google-reviews/stable/v3.56.2/2f69101c7271c63e8a639ac1d86a2640f8e43eee/widget/googleReviews.js",
+      "resourceType": "script"
+    },
+    {
+      "url": "https://go180.nl/app/themes/go180/assets/fonts/Gilroy-Medium.woff2",
+      "resourceType": "font"
+    },
+    {
+      "url": "https://universe-static.elfsightcdn.com/app-releases/google-reviews/stable/v3.56.2/2f69101c7271c63e8a639ac1d86a2640f8e43eee/widget/languages/nl.json",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg",
+      "resourceType": "xhr"
+    },
+    {
+      "url": "https://service-reviews-ultimate.elfsight.com/data/sources?uris%5B%5D=ChIJcbCMATH8yEcR6IdcPxvbCrw",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://service-reviews-ultimate.elfsight.com/data/reviews?uris%5B%5D=ChIJcbCMATH8yEcR6IdcPxvbCrw&filter_content=text_required&min_rating=5&page_length=100&order=date",
+      "resourceType": "fetch"
+    },
+    {
+      "url": "https://go180.nl/video/header.mp4",
+      "resourceType": "media"
+    },
+    {
+      "url": "https://go180.nl/wp-json/pum/v1/analytics/",
+      "resourceType": "ping"
+    }
+  ]
+}

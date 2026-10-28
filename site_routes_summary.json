@@ -1,0 +1,176 @@
+[
+  {
+    "route": "home",
+    "path": "/",
+    "title": "Samen naar een gezonde leefstijl, o.a. PT, fitness | GO180",
+    "h1": [
+      "Build your tomorrow",
+      "Programs",
+      "Coaches",
+      "Onze club",
+      "Stories",
+      "GO180?"
+    ],
+    "h2": [],
+    "metaDesc": "Met GO180 op naar een gezonde leefstijl? Het beste uit jezelf halen, de rest van je leven? Begin vandaag & meld je aan! O.a. 24/7 advies."
+  },
+  {
+    "route": "we-are-go180",
+    "path": "/we-are-go180/",
+    "title": "We are GO180 - Bouwen aan jouw toekomst",
+    "h1": [
+      "We are GO180"
+    ],
+    "h2": [
+      "Onze missie en visie",
+      "GO180 filosofie",
+      "Mindset",
+      "Voeding",
+      "Personal Training",
+      "Herstel",
+      "Veelgestelde vragen over GO180",
+      "Veelgestelde vragen over GO180",
+      "Coaches",
+      "Club"
+    ],
+    "metaDesc": "Build your tomorrow! Met de juiste eet-, beweeg en leefstijladviezen is er meer mogelijk dan jij je nu voor kunt stellen. Begin vandaag nog!"
+  },
+  {
+    "route": "programs",
+    "path": "/programs/",
+    "title": "Programma's | GO180",
+    "h1": [
+      "Programs"
+    ],
+    "h2": [
+      "",
+      "HYROX",
+      "GO2day",
+      "Healthy Ageing",
+      "Essentials",
+      "Fundamentals",
+      "GO2Gether",
+      "Adaptable",
+      "Digital coaching",
+      "Coaches"
+    ],
+    "metaDesc": ""
+  },
+  {
+    "route": "programs-essentials",
+    "path": "/programs/essentials/",
+    "title": "Essentials programma [word in 12 weken gezond] | GO180",
+    "h1": [
+      "Essentials"
+    ],
+    "h2": [
+      "Bij dit programma inbegrepen:",
+      "In de praktijk",
+      "Onze werkwijze",
+      "Persoonlijk assessment",
+      "Doelgerichte persoonlijke training",
+      "Voedingsadvies",
+      "Wekelijkse evaluatie",
+      "Coaches",
+      "Fundamentals"
+    ],
+    "metaDesc": "Gooi het roer om in twaalf weken! Met het Essentials programma verander je in korte tijd je lichaam & gezondheid. Meld je nu aan bij GO180!"
+  },
+  {
+    "route": "coaches",
+    "path": "/coaches/",
+    "title": "Coaches | GO180",
+    "h1": [
+      "Coaches"
+    ],
+    "h2": [
+      "Club"
+    ],
+    "metaDesc": "De personal trainers van GO180 zijn van zeer hoge kwaliteit op het gebied van kennis, ervaring, inspiratie en passie. Are you ready to GO180?"
+  },
+  {
+    "route": "club-leeuwarden",
+    "path": "/clubs/leeuwarden/",
+    "title": "Personal training Leeuwarden? [Build Your Tomorrow] | GO180",
+    "h1": [
+      "Leeuwarden"
+    ],
+    "h2": [
+      "Dé plek voor personal training in Leeuwarden",
+      "Personal training voor het behalen van je doelen",
+      "Personal training voor het behalen van je doelen",
+      "Personal training bij GO180 in Leeuwarden",
+      "Veelgestelde vragen over personal training in Leeuwarden",
+      "Veelgestelde vragen over personal training in Leeuwarden",
+      "Personal trainers in Leeuwarden",
+      "Leeuwarden"
+    ],
+    "metaDesc": "Personal training Leeuwarden, bij GO180 [Build Your Tomorrow] ✓Persoonlijk betrokken ✓Serieus werken aan je gezondheid ✓24/7 advies"
+  },
+  {
+    "route": "stories",
+    "path": "/stories/",
+    "title": "Stories | GO180",
+    "h1": [
+      "Stories"
+    ],
+    "h2": [
+      "Page"
+    ],
+    "metaDesc": "Doe je kennis op, lees onze artikelen en ervaringsverhalen over training, mindset, herstel en voeding."
+  },
+  {
+    "route": "pricing",
+    "path": "/pricing/",
+    "title": "Personal training kosten? [Programma's & Maatwerk] | GO180",
+    "h1": [
+      "Pricing"
+    ],
+    "h2": [
+      "Kosten voor GO2Gether",
+      "Kosten voor GO2day",
+      "Kosten voor HYROX",
+      "Kosten voor personal training",
+      "Het adaptable programma",
+      "Digital coaching",
+      "Kosten voor personal training bij GO180",
+      "Vraag een gratis proefles aan"
+    ],
+    "metaDesc": "Personal training kosten? De kosten zijn op basis van jouw programma [Ook maatwerk mogelijk] ✓Persoonlijke betrokkenheid ✓24/7 advies"
+  },
+  {
+    "route": "contact",
+    "path": "/contact/",
+    "title": "Meer weten? Neem contact met ons op | GO180",
+    "h1": [
+      "Contact"
+    ],
+    "h2": [],
+    "metaDesc": "Wil je meer weten over de coaches, werkwijze of visie van GO180? Laat het ons vooral weten. Wij helpen je graag verder!"
+  },
+  {
+    "route": "join-now",
+    "path": "/join-now/",
+    "title": "Join now | GO180",
+    "h1": [
+      "Join now"
+    ],
+    "h2": [
+      "Meer informatie"
+    ],
+    "metaDesc": ""
+  },
+  {
+    "route": "free-trial",
+    "path": "/free-trial/",
+    "title": "Gratis proefles aanvragen | GO180",
+    "h1": [
+      "Gratis proefles aanvragen"
+    ],
+    "h2": [
+      "Over GO180",
+      "Programs"
+    ],
+    "metaDesc": ""
+  }
+]

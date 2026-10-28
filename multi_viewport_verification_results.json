@@ -1,0 +1,260 @@
+[
+  {
+    "viewport": "Desktop",
+    "dimensions": "1440x900",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": true,
+        "verticalScrollPassed": true,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(-325px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-362px, 0px, 0px)",
+        "afterNext": "translate3d(-775px, 0px, 0px)",
+        "afterPrev": "translate3d(-362px, 0px, 0px)",
+        "afterDot": "translate3d(-1188px, 0px, 0px)",
+        "afterDrag": "translate3d(-1188px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "viewport": "Laptop",
+    "dimensions": "1280x800",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": true,
+        "verticalScrollPassed": true,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(-325px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-327px, 0px, 0px)",
+        "afterNext": "translate3d(-695px, 0px, 0px)",
+        "afterPrev": "translate3d(-327px, 0px, 0px)",
+        "afterDot": "translate3d(-1062px, 0px, 0px)",
+        "afterDrag": "translate3d(-1062px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "viewport": "Tablet",
+    "dimensions": "768x1024",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": false,
+        "verticalScrollPassed": false,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(0px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-677px, 0px, 0px)",
+        "afterNext": "translate3d(-1082px, 0px, 0px)",
+        "afterPrev": "translate3d(-677px, 0px, 0px)",
+        "afterDot": "translate3d(-1487px, 0px, 0px)",
+        "afterDrag": "translate3d(-1487px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "viewport": "Mobile-430",
+    "dimensions": "430x932",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": false,
+        "verticalScrollPassed": false,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(0px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-374px, 0px, 0px)",
+        "afterNext": "translate3d(-738px, 0px, 0px)",
+        "afterPrev": "translate3d(-374px, 0px, 0px)",
+        "afterDot": "translate3d(-1102px, 0px, 0px)",
+        "afterDrag": "translate3d(-1102px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "viewport": "Mobile-390",
+    "dimensions": "390x844",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": false,
+        "verticalScrollPassed": false,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(0px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-342px, 0px, 0px)",
+        "afterNext": "translate3d(-674px, 0px, 0px)",
+        "afterPrev": "translate3d(-342px, 0px, 0px)",
+        "afterDot": "translate3d(-1006px, 0px, 0px)",
+        "afterDrag": "translate3d(-1006px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  },
+  {
+    "viewport": "Mobile-375",
+    "dimensions": "375x812",
+    "tests": {
+      "reviewsSwiper": {
+        "passed": false,
+        "verticalScrollPassed": false,
+        "initial": "translate3d(0px, 0px, 0px)",
+        "afterNext": "translate3d(-325px, 0px, 0px)",
+        "afterPrev": "translate3d(0px, 0px, 0px)",
+        "afterDrag": "translate3d(0px, 0px, 0px)"
+      },
+      "slickCarousel": {
+        "passed": true,
+        "initial": "translate3d(-330px, 0px, 0px)",
+        "afterNext": "translate3d(-650px, 0px, 0px)",
+        "afterPrev": "translate3d(-330px, 0px, 0px)",
+        "afterDot": "translate3d(-970px, 0px, 0px)",
+        "afterDrag": "translate3d(-970px, 0px, 0px)"
+      },
+      "dragSlider": {
+        "passed": true,
+        "initial": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "afterPt1": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ],
+        "afterDrag": [
+          "translate(-100%, 0px)",
+          "translate(0%, 0px)",
+          "",
+          ""
+        ]
+      }
+    }
+  }
+]
