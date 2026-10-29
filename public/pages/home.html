@@ -445,17 +445,11 @@ Een goede sportschool met personal training. Waarbij samen met leuke motiverende
 <script type="text/javascript">
 window.onload = () => {
   let footer = document.querySelector('.footer');
-  let elgsightReviews = document.createElement('div');
-  elgsightReviews.setAttribute('class', 'elfsight-app-c92cdafb-a9bc-4e62-9f4d-7183c800c11c');
-
-	const myInterval = setInterval(()=> {
-			    footer.prepend(elgsightReviews);	
-	}, 500)
-	setTimeout(()=> {
-	    clearInterval(myInterval)
-	}, 2000)
-
-  
+  if (footer && !footer.querySelector('.elfsight-app-c92cdafb-a9bc-4e62-9f4d-7183c800c11c')) {
+    let elgsightReviews = document.createElement('div');
+    elgsightReviews.setAttribute('class', 'elfsight-app-c92cdafb-a9bc-4e62-9f4d-7183c800c11c');
+    footer.prepend(elgsightReviews);
+  }
 }
 </script><div id="pum-1690" role="dialog" aria-modal="false" aria-labelledby="pum_popup_title_1690" class="pum pum-overlay pum-theme-1688 pum-theme-content-only popmake-overlay pum-overlay-disabled auto_open click_open" data-popmake="{&quot;id&quot;:1690,&quot;slug&quot;:&quot;nieuwsbrief-aanmeldformulier&quot;,&quot;theme_id&quot;:1688,&quot;cookies&quot;:[{&quot;event&quot;:&quot;on_popup_close&quot;,&quot;settings&quot;:{&quot;name&quot;:&quot;pum-1690&quot;,&quot;key&quot;:&quot;&quot;,&quot;session&quot;:null,&quot;path&quot;:true,&quot;time&quot;:&quot;1 month&quot;}}],&quot;triggers&quot;:[{&quot;type&quot;:&quot;auto_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:[&quot;pum-1690&quot;],&quot;delay&quot;:&quot;6000&quot;}},{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:&quot;1&quot;,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;auto&quot;,&quot;responsive_min_width&quot;:&quot;0px&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100px&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;300px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;right bottom&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;10&quot;,&quot;position_right&quot;:&quot;10&quot;,&quot;position_fixed&quot;:&quot;1&quot;,&quot;animation_type&quot;:&quot;slide&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;bottom&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" style="opacity: 0.383277; display: block;">
 
@@ -535,4 +529,4 @@ var smushLazyLoadOptions = {"autoResizingEnabled":false,"autoResizeOptions":{"pr
 
 <p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" hidden="">Meldingen</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><div id="__EAAPS_PORTAL" class="portal-nest-provider__ElfsightPortalNest-sc-428d64a-0 SSxQl es-portal-root eapps-google-reviews-c92cdafb-a9bc-4e62-9f4d-7183c800c11c-custom-css-root"></div>
 
-</body></html
+</body></html>
