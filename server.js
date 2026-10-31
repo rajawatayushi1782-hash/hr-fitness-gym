@@ -19,11 +19,11 @@ rootFiles.forEach(f => {
 });
 
 // 2. Map WordPress asset paths directly to local assets
-app.get('/app/themes/go180/assets/css/main.css', (req, res) => {
+app.get(['/app/themes/:theme/assets/css/main.css', '/app/themes/go180/assets/css/main.css', '/css/main.css'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'css', 'main.css'));
 });
 
-app.get('/app/themes/go180/assets/js/main.js', (req, res) => {
+app.get(['/app/themes/:theme/assets/js/main.js', '/app/themes/go180/assets/js/main.js', '/js/original_main.js', '/js/main.js'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'js', 'original_main.js'));
 });
 

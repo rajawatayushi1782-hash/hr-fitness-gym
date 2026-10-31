@@ -207,3 +207,62 @@ document.addEventListener("error", function(e) {
     }
   }
 }, true);
+
+
+// ==========================================================================
+// HR FITNESS CLUB — RESPONSIVE NAVIGATION & ACCESSIBILITY ENHANCEMENTS
+// ==========================================================================
+(function() {
+  function ensureMobileMenuCTA() {
+    const mobileMenu = document.querySelector('.mobile__menu');
+    if (mobileMenu && !mobileMenu.querySelector('.mobile__menu_cta')) {
+      const ctaDiv = document.createElement('div');
+      ctaDiv.className = 'mobile__menu_cta';
+      ctaDiv.innerHTML = '<a href="/join-now/" class="btn">Join now</a>';
+      mobileMenu.appendChild(ctaDiv);
+    }
+  }
+
+  function closeMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile__menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (mobileMenu && mobileMenu.classList.contains('-open')) {
+      if (hamburger && !mobileMenu.classList.contains('-animated')) {
+        hamburger.click();
+      } else {
+        mobileMenu.classList.remove('-open');
+        mobileMenu.classList.remove('-animated');
+        mobileMenu.style.display = 'none';
+      }
+    }
+  }
+
+  // Close mobile menu on clicking any navigation link
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('.mobile__menu a');
+    if (link) {
+      closeMobileMenu();
+    }
+  });
+
+  // Support Escape key to close mobile menu
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+
+  // Automatically close mobile menu if resized back to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1025) {
+      closeMobileMenu();
+    }
+  }, { passive: true });
+
+  if (document.readyState !== 'loading') {
+    ensureMobileMenuCTA();
+  } else {
+    document.addEventListener('DOMContentLoaded', ensureMobileMenuCTA);
+  }
+  window.addEventListener('load', ensureMobileMenuCTA);
+})();

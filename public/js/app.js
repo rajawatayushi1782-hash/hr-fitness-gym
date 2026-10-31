@@ -64,7 +64,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Mobile Hamburger Menu Toggle is managed natively by original_main.js
+  // 4. Mobile Hamburger Menu Enhancements & Accessibility
+  const mobileMenu = document.querySelector('.mobile__menu');
+  const hamburger = document.querySelector('.hamburger');
+
+  // Ensure Join Now CTA button exists inside mobile menu
+  if (mobileMenu && !mobileMenu.querySelector('.mobile__menu_cta')) {
+    const ctaDiv = document.createElement('div');
+    ctaDiv.className = 'mobile__menu_cta';
+    ctaDiv.innerHTML = '<a href="/join-now/" class="btn">Join now</a>';
+    mobileMenu.appendChild(ctaDiv);
+  }
+
+  // Close mobile menu on selecting any navigation link
+  const closeMobileMenu = () => {
+    if (mobileMenu && mobileMenu.classList.contains('-open')) {
+      if (hamburger) {
+        hamburger.click();
+      } else {
+        mobileMenu.classList.remove('-open');
+      }
+    }
+  };
+
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  // Support Escape key to close mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile menu if resized back to desktop (>= 1025px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1025) {
+      closeMobileMenu();
+    }
+  }, { passive: true });
 
 
   // 5. Floating Labels for Forms
