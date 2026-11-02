@@ -1,0 +1,10 @@
+{
+  "viewportsTested": 14,
+  "horizontalOverflows": [],
+  "menuAccordionPassed": true,
+  "arrowScrollPassed": true,
+  "reviewsSwiperPassed": true,
+  "starsDuplicatePassed": true,
+  "brandingCheckPassed": true,
+  "details": []
+}

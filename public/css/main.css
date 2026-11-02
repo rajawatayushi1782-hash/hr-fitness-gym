@@ -96,41 +96,67 @@ html.ready .wipe_spinner { display: none !important; opacity: 0 !important; poin
   align-items: center !important;
 }
 
-/* 2. Rating stars in header and cards */
+/* 2. Rating stars in header and cards — FIX DUPLICATE / OVERLAPPING STARS */
 .es-rating-bar-container,
 .rating-bar__Container-sc-a0e65981-0 {
   display: inline-flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  height: 16px !important;
-  gap: 2px !important;
+  height: 18px !important;
+  gap: 3px !important;
   vertical-align: middle !important;
 }
 
 .es-rating-item,
-.es-rating-item-absolute,
-.es-rating-stars-item-filled,
-.es-rating-stars-item-unfilled {
-  width: 14px !important;
-  height: 14px !important;
+.RatingItemFilledSvg__Container-sc-354b5d76-0 {
   position: relative !important;
-  display: inline-block !important;
-  flex: 0 0 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex: 0 0 16px !important;
+}
+
+/* Strictly hide unfilled star background duplicate layer */
+.es-rating-item-unfilled,
+.RatingItemFilledSvg__Unfilled-sc-354b5d76-2,
+.es-rating-stars-item-unfilled {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Single clean filled star layer */
+.es-rating-item-absolute,
+.es-rating-item-filled,
+.RatingItemFilledSvg__Filled-sc-354b5d76-3,
+.es-rating-stars-item-filled {
+  position: relative !important;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .es-rating-bar-container svg,
 .es-rating-item svg,
 .es-rating-stars-item-filled svg,
-.es-rating-stars-item-unfilled svg,
 .es-header-rating svg,
 .es-review-content-rating svg {
-  width: 14px !important;
-  height: 14px !important;
-  max-width: 14px !important;
-  max-height: 14px !important;
-  min-width: 14px !important;
-  min-height: 14px !important;
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
   display: block !important;
+}
+
+.es-rating-stars-item-filled svg path,
+.RatingItemFilledSvg__Filled-sc-354b5d76-3 svg path {
+  fill: #FBBC05 !important;
 }
 
 /* 3. Review Card Google Logo & Tail */
@@ -633,7 +659,7 @@ iframe, video {
   .mobile__menu.-open .menu {
     display: flex !important;
     flex-direction: column !important;
-    gap: 6px !important;
+    gap: 4px !important;
     padding: 0 !important;
     margin: 0 !important;
     width: 100% !important;
@@ -645,52 +671,96 @@ iframe, video {
     justify-content: space-between !important;
     align-items: center !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 6px 0 !important;
+    padding: 2px 0 !important;
     width: 100% !important;
   }
   .mobile__menu.-open .menu > li > a {
-    font-size: clamp(17px, 4.5vw, 22px) !important;
+    font-size: clamp(16px, 4vw, 20px) !important;
     font-weight: 600 !important;
     color: #ffffff !important;
     text-decoration: none !important;
     padding: 6px 0 !important;
-    min-height: 44px !important;
+    min-height: 40px !important;
     display: inline-flex !important;
     align-items: center !important;
     opacity: 1 !important;
     transform: none !important;
+    flex: 1 !important;
   }
+  .mobile__menu.-open .menu__arrow {
+    width: 44px !important;
+    height: 40px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.25s ease !important;
+  }
+  .mobile__menu.-open .menu__arrow::after {
+    content: "" !important;
+    display: inline-block !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-right: 2px solid #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+    transform: rotate(-45deg) !important;
+    transition: transform 0.25s ease !important;
+  }
+  .mobile__menu.-open .menu-item-has-children.-expanded > .menu__arrow::after,
+  .mobile__menu.-open .menu__arrow--rotate-90::after {
+    transform: rotate(45deg) !important;
+  }
+
+  /* ACCORDION: Sub-menu collapsed by default on mobile */
+  .mobile__menu .sub-menu,
   .mobile__menu.-open .sub-menu {
+    display: none !important;
     width: 100% !important;
     padding: 6px 0 6px 14px !important;
-    background: transparent !important;
-    display: flex !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 8px !important;
+    margin: 4px 0 8px 0 !important;
     flex-direction: column !important;
-    gap: 4px !important;
+    gap: 2px !important;
     list-style: none !important;
+    box-sizing: border-box !important;
+  }
+  .mobile__menu.-open .menu-item-has-children.-expanded > .sub-menu {
+    display: flex !important;
+  }
+  .mobile__menu.-open .sub-menu li {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    border: none !important;
+    padding: 0 !important;
   }
   .mobile__menu.-open .sub-menu a {
-    font-size: clamp(14px, 3.8vw, 17px) !important;
+    font-size: clamp(14px, 3.5vw, 16px) !important;
     font-weight: 500 !important;
     color: #b0c4cc !important;
-    min-height: 38px !important;
+    min-height: 34px !important;
     display: inline-flex !important;
     align-items: center !important;
     opacity: 1 !important;
     transform: none !important;
+    width: 100% !important;
+    padding: 4px 0 !important;
   }
   .mobile__menu.-open .sub-menu a:hover {
     color: #ffffff !important;
   }
 
-  /* Join Now CTA inside mobile drawer */
+  /* Join Now CTA inside mobile drawer — Never overlaps navigation links */
   .mobile__menu_cta {
-    margin-top: 20px !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
     width: 100% !important;
     max-width: 500px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     flex-shrink: 0 !important;
+    box-sizing: border-box !important;
   }
   .mobile__menu_cta .btn {
     display: flex !important;
@@ -700,39 +770,60 @@ iframe, video {
     height: 48px !important;
     font-size: 16px !important;
     font-weight: 700 !important;
-    border-radius: 4px !important;
+    border-radius: 6px !important;
     background: #e1e1e1 !important;
     color: #0d1e25 !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    border: none !important;
+    cursor: pointer !important;
   }
 }
 
-/* 5. Stories Category Filters */
+/* 5. Stories Category Filters — SLEEK HORIZONTAL SCROLLABLE CHIPS */
 .filter-holder {
   display: flex !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
   gap: 10px !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   max-width: 100% !important;
   width: 100% !important;
-  padding: 12px clamp(12px, 3vw, 24px) 24px clamp(12px, 3vw, 24px) !important;
+  padding: 12px 20px 20px 20px !important;
+  margin: 0 auto 24px auto !important;
   box-sizing: border-box !important;
-  overflow-x: visible !important;
+  scrollbar-width: none !important;
+}
+.filter-holder::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 .filter-holder .btn.-outline {
   white-space: nowrap !important;
-  padding: 8px 16px !important;
-  font-size: 14px !important;
-  min-height: 40px !important;
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+  min-height: 38px !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
+  flex: 0 0 auto !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: #e1e1e1 !important;
+  background: rgba(20, 36, 44, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.2s ease !important;
+}
+.filter-holder .btn.-outline:hover,
+.filter-holder .btn.-outline.-active {
+  background: #e1e1e1 !important;
+  color: #0d1e25 !important;
+  border-color: #e1e1e1 !important;
 }
 
 /* 6. Carousels, Sliders & Reviews (Thatipur Club, Coaches, Programs, Home) */
@@ -1018,5 +1109,305 @@ iframe, video {
     transform: none !important;
     touch-action: pan-y !important;
   }
+}
+
+/* ==========================================================================
+   12. MOBILE REPAIR — STORIES, HERO VIRTUAL VOIDS, ARROWS & REVIEWS
+   Direct fixes for user mobile testing exhibits
+   ========================================================================== */
+
+/* A. STORIES SECTION ON MOBILE & TABLET */
+@media screen and (max-width: 1024px) {
+  .slide.-small {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 90px !important;
+    padding-bottom: 24px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .slide.-small .slide__txtHolder,
+  .slide.-small .slide__txtHolder.-first {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .archiveDouble {
+    padding-top: 10px !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .archiveDouble__row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 36px !important;
+    padding: 0 16px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .archiveDouble__single {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .archiveDouble__single .carousel__img {
+    width: 100% !important;
+    height: clamp(210px, 55vw, 300px) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    background: #14242c !important;
+  }
+  .archiveDouble__single .carousel__paralax,
+  .archiveDouble__single .carousel__paralaxInner {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+  .archiveDouble__single .carousel__imgFile {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .archiveDouble__single .circle__text {
+    width: 68px !important;
+    height: 68px !important;
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    left: auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+  }
+  .archiveDouble__single .circle__text img,
+  .archiveDouble__single .circle__text svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .archiveDouble__single h3.title-small {
+    font-size: clamp(18px, 4.8vw, 24px) !important;
+    margin: 14px 0 6px 0 !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+  }
+  .archiveDouble__single .carousel__txt {
+    font-size: 13px !important;
+    color: #8fa1ab !important;
+    margin: 0 !important;
+  }
+}
+
+/* B. PROGRAM PAGES HERO SECTION & ARROW SCROLL */
+@media screen and (max-width: 768px) {
+  /* Remove excessive blank space under hero */
+  .slide.spacer-f {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 80px !important;
+    padding-bottom: 30px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .slide.spacer-f .slide__img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 45vh !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 0 0 16px 16px !important;
+  }
+  .slide.spacer-f .slide__txtHolder,
+  .slide.spacer-f .slide__txtHolder.-first {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    padding: 24px 20px 0 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .slide.spacer-f .slide__shadow {
+    display: none !important;
+  }
+
+  /* Fully visible, centered, interactive arrow scroll */
+  .arrowScroll,
+  .js-arrowScroll {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 24px auto 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 56px !important;
+    height: 56px !important;
+    cursor: pointer !important;
+    z-index: 20 !important;
+    pointer-events: auto !important;
+  }
+  .arrowScroll svg {
+    opacity: 1 !important;
+    pointer-events: none !important;
+  }
+  .arrowScroll__circle circle {
+    stroke-dashoffset: 0 !important;
+    stroke-dasharray: 260px, 999999px !important;
+    stroke: #E9E9E9 !important;
+  }
+  .arrowScroll__arrow {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* C. REVIEWS SECTION REPAIR ON MOBILE & TABLET */
+@media screen and (max-width: 768px) {
+  .es-header-component-top {
+    margin-bottom: 24px !important;
+  }
+  .es-header-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .es-header-info {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px 16px !important;
+  }
+  .es-header-heading-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .es-header-heading-text {
+    font-size: 20px !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  .es-header-write-review-button-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .es-header-write-review-button {
+    width: auto !important;
+    min-width: 200px !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+  }
+
+  /* Review carousel: 1 full card at a time with touch swipe */
+  .es-carousel-outer {
+    position: relative !important;
+    padding-bottom: 48px !important;
+    overflow: hidden !important;
+  }
+  .es-carousel-inner,
+  .swiper {
+    width: 100% !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  .swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .swiper-slide {
+    flex: 0 0 calc(100vw - 44px) !important;
+    width: calc(100vw - 44px) !important;
+    max-width: calc(100vw - 44px) !important;
+    margin: 0 16px 0 0 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
+  .es-review-container {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 22px 20px !important;
+    min-height: 220px !important;
+    border-radius: 16px !important;
+    background: #14242c !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  .es-review-content-text-container {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #cfd8dc !important;
+  }
+
+  /* Prev/Next arrows centered cleanly below active card */
+  .es-carousel-arrow-control-container {
+    position: absolute !important;
+    bottom: 2px !important;
+    top: auto !important;
+    width: 38px !important;
+    height: 38px !important;
+    z-index: 25 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #172c36 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+  }
+  .es-carousel-arrow-control-container-previous {
+    left: calc(50% - 48px) !important;
+  }
+  .es-carousel-arrow-control-container-next {
+    left: calc(50% + 10px) !important;
+    right: auto !important;
+  }
+}
+
+/* D. UNIVERSAL INTERACTIVE CONTROL POINTER & TOUCH FIXES */
+.arrowScroll,
+.js-arrowScroll,
+.slick-prev,
+.slick-next,
+.carousel__prev,
+.carousel__next,
+.es-carousel-arrow-control,
+.es-carousel-arrow-control-container,
+.js-menu-arrow,
+.menu__arrow,
+.filter-holder a.btn {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
 }
 

@@ -100,17 +100,26 @@ var ea,ta,ia,na,ra,sa,aa,oa,la=function(){return"undefined"!=typeof window},ua=f
   if(!$slides.length) return;
 
   var currentIdx = 0;
-  var slideStride = 325;
+
+  function getMetrics(){
+    var isMob = window.innerWidth <= 768;
+    var containerWidth = $swiper.width() || window.innerWidth;
+    var slideStride = 325;
+    if(isMob && $slides.length){
+      var firstW = $slides.first().outerWidth(true);
+      slideStride = (firstW && firstW > 100) ? firstW : containerWidth;
+    }
+    var visibleCards = isMob ? 1 : Math.max(1, Math.floor(containerWidth / slideStride));
+    var maxIdx = Math.max(0, $slides.length - (isMob ? 1 : visibleCards));
+    return { isMob: isMob, stride: slideStride, maxIdx: maxIdx };
+  }
 
   function updateSwiper(animate){
-    var containerWidth = $swiper.width() || window.innerWidth;
-    var visibleCards = Math.max(1, Math.floor(containerWidth / slideStride));
-    var maxIdx = Math.max(0, $slides.length - visibleCards);
-
+    var m = getMetrics();
     if(currentIdx < 0) currentIdx = 0;
-    if(currentIdx > maxIdx) currentIdx = maxIdx;
+    if(currentIdx > m.maxIdx) currentIdx = m.maxIdx;
 
-    var translateX = -(currentIdx * slideStride);
+    var translateX = -(currentIdx * m.stride);
     var transition = (animate !== false) ? 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
     $wrapper.css({
       'transform': 'translate3d(' + translateX + 'px, 0px, 0px)',
@@ -120,7 +129,7 @@ var ea,ta,ia,na,ra,sa,aa,oa,la=function(){return"undefined"!=typeof window},ua=f
     var $prev = e('.es-carousel-arrow-control-container-previous');
     var $next = e('.es-carousel-arrow-control-container-next');
     var isBeginning = (currentIdx === 0);
-    var isEnd = (currentIdx >= maxIdx);
+    var isEnd = (currentIdx >= m.maxIdx);
 
     $prev.attr('aria-disabled', isBeginning ? 'true' : 'false').css('opacity', isBeginning ? '0.4' : '1');
     $next.attr('aria-disabled', isEnd ? 'true' : 'false').css('opacity', isEnd ? '0.4' : '1');
@@ -134,10 +143,8 @@ var ea,ta,ia,na,ra,sa,aa,oa,la=function(){return"undefined"!=typeof window},ua=f
     if(now - lastClick < 200) return;
     lastClick = now;
 
-    var containerWidth = $swiper.width() || window.innerWidth;
-    var visibleCards = Math.max(1, Math.floor(containerWidth / slideStride));
-    var maxIdx = Math.max(0, $slides.length - visibleCards);
-    if(currentIdx < maxIdx){
+    var m = getMetrics();
+    if(currentIdx < m.maxIdx){
       currentIdx++;
       updateSwiper(true);
     }
@@ -163,7 +170,8 @@ var ea,ta,ia,na,ra,sa,aa,oa,la=function(){return"undefined"!=typeof window},ua=f
     currentX = startX;
     isDragging = true;
     dragMoved = false;
-    startTranslate = -(currentIdx * slideStride);
+    var m = getMetrics();
+    startTranslate = -(currentIdx * m.stride);
     $wrapper.css('transition', 'none');
   });
 
@@ -183,11 +191,9 @@ var ea,ta,ia,na,ra,sa,aa,oa,la=function(){return"undefined"!=typeof window},ua=f
     if(!isDragging) return;
     isDragging = false;
     var dx = currentX - startX;
-    var containerWidth = $swiper.width() || window.innerWidth;
-    var visibleCards = Math.max(1, Math.floor(containerWidth / slideStride));
-    var maxIdx = Math.max(0, $slides.length - visibleCards);
-    if(dragMoved && Math.abs(dx) > 40){
-      if(dx < 0 && currentIdx < maxIdx) currentIdx++;
+    var m = getMetrics();
+    if(dragMoved && Math.abs(dx) > 30){
+      if(dx < 0 && currentIdx < m.maxIdx) currentIdx++;
       else if(dx > 0 && currentIdx > 0) currentIdx--;
     }
     updateSwiper(true);
@@ -237,11 +243,65 @@ document.addEventListener("error", function(e) {
     }
   }
 
-  // Close mobile menu on clicking any navigation link
+  // Handle mobile menu accordion toggle and link clicks
   document.addEventListener('click', function(e) {
+    // 1. Tapping arrow icon
+    const arrow = e.target.closest('.mobile__menu .menu__arrow, .mobile__menu .js-menu-arrow');
+    if (arrow) {
+      e.preventDefault();
+      e.stopPropagation();
+      const parentLi = arrow.closest('.menu-item-has-children');
+      if (parentLi) {
+        parentLi.classList.toggle('-expanded');
+        arrow.classList.toggle('menu__arrow--rotate-90');
+      }
+      return;
+    }
+
+    // 2. Tapping parent item link (e.g. 'Programs')
     const link = e.target.closest('.mobile__menu a');
     if (link) {
+      const parentLi = link.closest('.menu-item-has-children');
+      // If clicking 'Programs' anchor itself and it's not yet expanded, expand it instead of navigating or closing
+      if (parentLi && link.parentElement === parentLi && !parentLi.classList.contains('-expanded')) {
+        e.preventDefault();
+        e.stopPropagation();
+        parentLi.classList.add('-expanded');
+        const childArrow = parentLi.querySelector('.menu__arrow, .js-menu-arrow');
+        if (childArrow) childArrow.classList.add('menu__arrow--rotate-90');
+        return;
+      }
       closeMobileMenu();
+    }
+  });
+
+  // Interactive scroll down arrow handler (.arrowScroll and .js-arrowScroll)
+  document.addEventListener('click', function(e) {
+    const arrowBtn = e.target.closest('.arrowScroll, .js-arrowScroll');
+    if (arrowBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const curSection = arrowBtn.closest('.slide, section, .spacer-f') || arrowBtn.parentElement;
+      let nextSection = curSection ? curSection.nextElementSibling : null;
+      while (nextSection && (nextSection.offsetHeight === 0 || nextSection.matches('script, style, link, meta, .wipe, .c-scrollbar'))) {
+        nextSection = nextSection.nextElementSibling;
+      }
+      if (!nextSection) {
+        nextSection = document.querySelector('.uspText, .spacer, #slide-2, .archiveDouble, .footer');
+      }
+      if (nextSection) {
+        if (window.locomotiveScroll && window.locomotiveScroll.scrollTo && window.innerWidth > 1024) {
+          window.locomotiveScroll.scrollTo(nextSection);
+        } else if (nextSection.scrollIntoView) {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          const rect = nextSection.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          window.scrollTo({ top: rect.top + scrollTop, behavior: 'smooth' });
+        }
+      } else {
+        window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+      }
     }
   });
 
