@@ -316,4 +316,30 @@ document.addEventListener('DOMContentLoaded', () => {
     videoHeader.muted = true;
     videoHeader.play().catch(() => {});
   }
+
+  // 12. Ensure native scrolling is fully unlocked on mobile devices and tablets
+  function ensureMobileNativeScroll() {
+    var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   ('MacIntel' === navigator.platform && navigator.maxTouchPoints > 1) ||
+                   window.innerWidth <= 1024;
+    if (isMobile) {
+      document.documentElement.classList.remove('has-scroll-smooth');
+      document.documentElement.style.position = 'static';
+      document.documentElement.style.overflowY = 'auto';
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.position = 'static';
+      document.body.style.overflowY = 'visible';
+      document.body.style.overflowX = 'hidden';
+      var sc = document.querySelector('#js-scroll') || document.querySelector('.scrollContainer');
+      if (sc) {
+        sc.style.position = 'static';
+        sc.style.transform = 'none';
+        sc.style.overflowY = 'visible';
+        sc.style.overflowX = 'hidden';
+      }
+    }
+  }
+  ensureMobileNativeScroll();
+  window.addEventListener('resize', ensureMobileNativeScroll, { passive: true });
 });
+

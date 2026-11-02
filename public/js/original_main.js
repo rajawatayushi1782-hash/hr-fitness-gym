@@ -259,10 +259,39 @@ document.addEventListener("error", function(e) {
     }
   }, { passive: true });
 
-  if (document.readyState !== 'loading') {
-    ensureMobileMenuCTA();
-  } else {
-    document.addEventListener('DOMContentLoaded', ensureMobileMenuCTA);
+  // Ensure native scrolling is fully unlocked on mobile devices and tablets
+  function ensureMobileNativeScroll() {
+    var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   ('MacIntel' === navigator.platform && navigator.maxTouchPoints > 1) ||
+                   window.innerWidth <= 1024;
+    if (isMobile) {
+      document.documentElement.classList.remove('has-scroll-smooth');
+      document.documentElement.style.position = 'static';
+      document.documentElement.style.overflowY = 'auto';
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.position = 'static';
+      document.body.style.overflowY = 'visible';
+      document.body.style.overflowX = 'hidden';
+      var sc = document.querySelector('#js-scroll') || document.querySelector('.scrollContainer');
+      if (sc) {
+        sc.style.position = 'static';
+        sc.style.transform = 'none';
+        sc.style.overflowY = 'visible';
+        sc.style.overflowX = 'hidden';
+      }
+    }
   }
-  window.addEventListener('load', ensureMobileMenuCTA);
+
+  function initMobileEnhancements() {
+    ensureMobileMenuCTA();
+    ensureMobileNativeScroll();
+  }
+
+  if (document.readyState !== 'loading') {
+    initMobileEnhancements();
+  } else {
+    document.addEventListener('DOMContentLoaded', initMobileEnhancements);
+  }
+  window.addEventListener('load', initMobileEnhancements);
+  window.addEventListener('resize', ensureMobileNativeScroll, { passive: true });
 })();

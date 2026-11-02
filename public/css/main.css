@@ -977,3 +977,46 @@ iframe, video {
     max-width: 100% !important;
   }
 }
+
+/* ==========================================================================
+   11. MOBILE & TABLET NATIVE TOUCH SCROLL RESTORATION
+   Enables 100% fluid vertical scrolling on all phones and touch devices.
+   Overrides Locomotive Scroll desktop fixed positioning on screens <= 1024px.
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  html,
+  html.has-scroll-smooth,
+  html.has-scroll-init,
+  html.ready {
+    position: static !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body,
+  .has-scroll-smooth body {
+    position: static !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .scrollContainer,
+  #js-scroll,
+  [data-scroll-container],
+  .main-container {
+    position: static !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100% !important;
+    transform: none !important;
+    touch-action: pan-y !important;
+  }
+}
+
