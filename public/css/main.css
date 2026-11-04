@@ -154,8 +154,43 @@ html.ready .wipe_spinner { display: none !important; opacity: 0 !important; poin
   display: block !important;
 }
 
+.es-rating-bar-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 3px !important;
+  margin-bottom: 12px !important;
+}
+
+.es-rating-item,
+.es-rating-stars-item-filled {
+  position: relative !important;
+  display: inline-flex !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.es-rating-item-unfilled {
+  display: none !important;
+}
+
+.es-rating-item-filled {
+  position: relative !important;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.es-rating-item-filled svg,
+.es-rating-stars-item-filled svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
 .es-rating-stars-item-filled svg path,
-.RatingItemFilledSvg__Filled-sc-354b5d76-3 svg path {
+.RatingItemFilledSvg__Filled-sc-354b5d76-3 svg path,
+.es-rating-item-filled svg path {
   fill: #FBBC05 !important;
 }
 
@@ -289,6 +324,8 @@ html.ready .wipe_spinner { display: none !important; opacity: 0 !important; poin
   width: 100% !important;
   height: 100% !important;
   display: flex !important;
+  flex: 1 1 100% !important;
+  box-sizing: border-box !important;
 }
 
 .es-review-container {
@@ -1375,17 +1412,29 @@ iframe, video {
     box-sizing: border-box !important;
   }
   .swiper-slide {
-    flex: 0 0 calc(100vw - 44px) !important;
-    width: calc(100vw - 44px) !important;
-    max-width: calc(100vw - 44px) !important;
+    flex: 0 0 calc(100vw - 48px) !important;
+    width: calc(100vw - 48px) !important;
+    max-width: 360px !important;
     margin: 0 16px 0 0 !important;
     box-sizing: border-box !important;
     height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .CarouselItem__CarouselItemContainer-sc-b0242df4-0,
+  .es-carousel-item,
+  .es-carousel-layout-item {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
   }
   .es-review-container {
     width: 100% !important;
+    flex: 1 1 100% !important;
     box-sizing: border-box !important;
-    padding: 22px 20px !important;
+    padding: 24px 20px !important;
     min-height: 220px !important;
     border-radius: 16px !important;
     background: #14242c !important;
@@ -1399,21 +1448,36 @@ iframe, video {
     color: #cfd8dc !important;
   }
 
-  /* Prev/Next arrows centered cleanly below active card */
+  /* Prev/Next arrows centered cleanly below active card on Mobile/Tablet */
+  .es-carousel-inner {
+    position: static !important;
+  }
+  .es-carousel-outer {
+    position: relative !important;
+    padding-bottom: 60px !important;
+  }
   .es-carousel-arrow-control-container {
     position: absolute !important;
-    bottom: 2px !important;
+    bottom: 8px !important;
     top: auto !important;
-    width: 38px !important;
-    height: 38px !important;
-    z-index: 25 !important;
-    cursor: pointer !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #172c36 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: #172c36 !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 50% !important;
+    cursor: pointer !important;
+    z-index: 25 !important;
+  }
+  .es-carousel-arrow-control-container-previous {
+    left: calc(50% - 50px) !important;
+    right: auto !important;
+  }
+  .es-carousel-arrow-control-container-next {
+    left: calc(50% + 10px) !important;
+    right: auto !important;
   }
   .es-carousel-arrow-control-container-previous {
     left: calc(50% - 48px) !important;
@@ -1443,3 +1507,46 @@ iframe, video {
   -webkit-user-select: none !important;
 }
 
+
+
+/* Reviews carousel controls on Desktop (>= 1025px) */
+@media screen and (min-width: 1025px) {
+  .es-carousel-outer {
+    position: relative !important;
+  }
+  .es-carousel-inner {
+    position: static !important;
+  }
+  .es-carousel-arrow-control-container {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #172c36 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 35 !important;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+  }
+  .es-carousel-arrow-control-container:hover {
+    background: #203e4d !important;
+    transform: translateY(-50%) scale(1.06) !important;
+  }
+  .es-carousel-arrow-control-container-previous {
+    left: -22px !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+  }
+  .es-carousel-arrow-control-container-next {
+    right: -22px !important;
+    left: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+  }
+}

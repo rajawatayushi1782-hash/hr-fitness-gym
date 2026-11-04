@@ -1,5 +1,5 @@
 /**
- * GO180 Pixel-Perfect Recreation - Interactive Application Logic
+ * HR FITNESS CLUB - Interactive Application Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,14 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (hasError) {
-        alert('Vul alstublieft alle verplichte velden in.');
+        alert('Please fill in all required fields.');
         return;
       }
 
       const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
-      const originalVal = submitBtn ? submitBtn.value : 'Verstuur';
+      const originalVal = submitBtn ? submitBtn.value : 'Submit';
       if (submitBtn) {
-        submitBtn.value = 'Bezig met versturen...';
+        submitBtn.value = 'Sending...';
         submitBtn.disabled = true;
       }
 
@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show friendly confirmation message
         form.innerHTML = `
           <div style="background: rgba(255,255,255,0.05); border: 1px solid #e1e1e1; padding: 40px; border-radius: 8px; text-align: center; margin: 30px 0;">
-            <h3 style="color: #fff; margin-bottom: 15px; font-size: 28px;">Bedankt voor je aanvraag!</h3>
-            <p style="color: #e1e1e1; font-size: 18px; line-height: 1.6;">We hebben je bericht ontvangen en nemen binnen 24 uur contact met je op.</p>
+            <h3 style="color: #fff; margin-bottom: 15px; font-size: 28px;">Thank you for your request!</h3>
+            <p style="color: #e1e1e1; font-size: 18px; line-height: 1.6;">We have received your message and will contact you within 24 hours.</p>
           </div>
         `;
       } catch (err) {
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.value = originalVal;
           submitBtn.disabled = false;
         }
-        alert('Er ging iets mis bij het verzenden. Probeer het later opnieuw.');
+        alert('Something went wrong while sending. Please try again later.');
       }
     });
   });

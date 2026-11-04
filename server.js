@@ -178,10 +178,13 @@ app.post(['/wp/wp-admin/admin-ajax.php', '/api/submit-form', '/api/contact'], (r
 const routes = {
   '/': 'home.html',
   '/we-are-go180/': 'we-are-go180.html',
+  '/about/': 'we-are-go180.html',
+  '/about-us/': 'we-are-go180.html',
   '/programs/': 'programs.html',
   '/programs/essentials/': 'programs-essentials.html',
   '/coaches/': 'coaches.html',
   '/clubs/leeuwarden/': 'club-leeuwarden.html',
+  '/clubs/thatipur/': 'club-leeuwarden.html',
   '/stories/': 'stories.html',
   '/pricing/': 'pricing.html',
   '/contact/': 'contact.html',
