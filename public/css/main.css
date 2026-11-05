@@ -1550,3 +1550,263 @@ iframe, video {
     bottom: auto !important;
   }
 }
+
+
+/* ==========================================================================
+   14. COMPREHENSIVE MOBILE RESPONSIVENESS FIXES (SLIDES & REVIEWS)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  /* Hide desktop measurement markers and navigation bullets on mobile */
+  .measerument_tools,
+  .slide__navigation,
+  .slide__navigationInner {
+    display: none !important;
+  }
+
+  .slides {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  /* A. Hero Section (Slide 1) */
+  #slide-1.slide {
+    min-height: 82vh !important;
+    height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    padding: 120px 20px 52px 20px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  #slide-1 img.-first {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    z-index: 1 !important;
+  }
+  #slide-1 .slide__shadow.-first {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(13,30,37,0.3) 0%, rgba(13,30,37,0.65) 45%, rgba(13,30,37,0.96) 95%) !important;
+    z-index: 2 !important;
+    display: block !important;
+  }
+  #slide-1 .slide__txtHolder {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 3 !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  #slide-1 .slide__title {
+    font-size: clamp(32px, 8.5vw, 46px) !important;
+    line-height: 1.15 !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6) !important;
+  }
+  #slide-1 .slide__text {
+    font-size: clamp(15px, 4vw, 17px) !important;
+    line-height: 1.6 !important;
+    color: #e1e1e1 !important;
+    margin: 0 auto 24px auto !important;
+    padding: 0 10px !important;
+    max-width: 440px !important;
+  }
+  #slide-1 .btn {
+    display: inline-flex !important;
+    margin: 0 auto !important;
+  }
+
+  /* B. Content Slides (Slide 2 - 6: Programs, Coaches, Club, Stories, HR Fitness Club) */
+  .slides .slide:not(#slide-1) {
+    height: auto !important;
+    min-height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 0 0 54px 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+  .slides .slide:not(#slide-1) img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: clamp(230px, 58vw, 360px) !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 0 16px 16px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+  .slides .slide:not(#slide-1) .slide__txtHolder {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    padding: 26px 20px 0 20px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    z-index: 2 !important;
+  }
+  .slides .slide:not(#slide-1) .slide__title {
+    font-size: clamp(28px, 7.2vw, 38px) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    color: #ffffff !important;
+  }
+  .slides .slide:not(#slide-1) .slide__text {
+    font-size: clamp(15px, 3.8vw, 17px) !important;
+    line-height: 1.6 !important;
+    color: #c0d0d8 !important;
+    margin: 0 auto 22px auto !important;
+    padding: 0 !important;
+    max-width: 460px !important;
+  }
+  .slides .slide:not(#slide-1) .btn {
+    display: inline-flex !important;
+    margin: 0 auto !important;
+  }
+  .slides .slide:not(#slide-1) .slide__shadow {
+    display: none !important;
+  }
+
+  /* C. Google Reviews Carousel on Mobile */
+  .footer {
+    padding-top: 30px !important;
+    padding-bottom: 24px !important;
+    height: auto !important;
+  }
+  .es-carousel-outer {
+    padding-bottom: 74px !important;
+    position: relative !important;
+  }
+  .es-carousel-inner {
+    position: static !important;
+    overflow: hidden !important;
+  }
+  .swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    align-items: stretch !important;
+  }
+  .swiper-slide {
+    flex: 0 0 calc(100vw - 48px) !important;
+    width: calc(100vw - 48px) !important;
+    max-width: 380px !important;
+    margin: 0 16px 0 0 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .es-carousel-item {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .es-review-container {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  .es-review-background-container {
+    background: #14242c !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 18px !important;
+    padding: 22px 20px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    flex: 1 0 auto !important;
+  }
+  .es-review-content-text-container {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+    color: #d1dde3 !important;
+    margin: 12px 0 8px 0 !important;
+  }
+  .es-text-shortener-control {
+    color: #fbbc05 !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    margin-top: 6px !important;
+  }
+  .es-review-author-block {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 0 4px !important;
+  }
+  .es-review-author-name {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+  }
+  .es-carousel-arrow-control-container-previous,
+  .es-carousel-arrow-control-container-next {
+    position: absolute !important;
+    bottom: 14px !important;
+    top: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #172c36 !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 15 !important;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+  }
+  .es-carousel-arrow-control-container-previous {
+    left: calc(50% - 52px) !important;
+    right: auto !important;
+  }
+  .es-carousel-arrow-control-container-next {
+    left: calc(50% + 8px) !important;
+    right: auto !important;
+  }
+  .es-carousel-arrow-control-container:active {
+    background: #203e4d !important;
+    transform: scale(0.95) !important;
+  }
+}
+
