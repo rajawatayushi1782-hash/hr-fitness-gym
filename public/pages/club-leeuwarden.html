@@ -734,4 +734,30 @@ var smushLazyLoadOptions = {"autoResizingEnabled":false,"autoResizeOptions":{"pr
 
 
 <p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" hidden="">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div>
+<script id="club-locomotive-sync">
+(function() {
+  function syncLocomotive() {
+    if (window.locomotive && typeof window.locomotive.update === 'function') {
+      window.locomotive.update();
+    }
+  }
+  window.addEventListener('load', function() {
+    syncLocomotive();
+    setTimeout(syncLocomotive, 300);
+    setTimeout(syncLocomotive, 1000);
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncLocomotive);
+  }
+  var container = document.querySelector('[data-scroll-container]');
+  if (container && typeof ResizeObserver !== 'undefined') {
+    var timer;
+    var ro = new ResizeObserver(function() {
+      clearTimeout(timer);
+      timer = setTimeout(syncLocomotive, 120);
+    });
+    ro.observe(container);
+  }
+})();
+</script>
 </body></html>
